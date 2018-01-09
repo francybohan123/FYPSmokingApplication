@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="0sp"
+    tools:context="com.example.francisbohan.socialmediaapp.mainMenuPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="720sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=" LQB "
+            android:textSize="80dp"
+            android:id="@+id/textLargeLogoLQB"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=" Main Menu "
+            android:textSize="30dp"
+            android:id="@+id/textMediumLogIn"
+            android:layout_below="@+id/textLargeLogoLQB"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/profileButton"
+            android:src="@drawable/profilesymbol"
+            android:layout_below="@+id/textMediumLogIn"
+            android:layout_toStartOf="@+id/daysSinceQuittingButton" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/moneySavedButton"
+            android:layout_alignBottom="@+id/profileButton"
+            android:layout_toEndOf="@+id/profileButton"
+            android:src="@drawable/money" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/cigarettesPassedButton"
+            android:layout_below="@+id/profileButton"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/cigs" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/daysSinceQuittingButton"
+            android:layout_alignBottom="@+id/cigarettesPassedButton"
+            android:layout_toEndOf="@+id/cigarettesPassedButton"
+            android:src="@drawable/calendersymbol" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/healthTrackerButton"
+            android:layout_below="@+id/cigarettesPassedButton"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/healthsymbol" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/tipsMotivationButton"
+            android:layout_alignBottom="@+id/healthTrackerButton"
+            android:layout_toEndOf="@+id/healthTrackerButton"
+            android:src="@drawable/tipssymbol" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/settingsButton"
+            android:layout_below="@+id/healthTrackerButton"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/settingsicon" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/logoutButton"
+            android:layout_alignBottom="@+id/settingsButton"
+            android:layout_toEndOf="@+id/settingsButton"
+            android:src="@drawable/logoutsymbol" />
+    </RelativeLayout>
+</ScrollView>
