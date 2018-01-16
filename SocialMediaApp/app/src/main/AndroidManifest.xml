@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.francisbohan.socialmediaapp" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,6 +32,37 @@
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity android:name=".mainMenuPage" >
+        </activity>
+        <activity android:name=".moneySavedPage" >
+        </activity>
+        <activity android:name=".cigarettesPassedPage" >
+        </activity>
+        <activity android:name=".daysSinceQuittingPage" >
+        </activity>
+        <activity android:name=".healthTrackerPage" >
+        </activity>
+        <activity android:name=".tipsAndMotivationsPage" >
+        </activity>
+        <activity android:name=".settingsPage" >
+        </activity>
+        <activity
+            android:name=".tipOnePage"
+            android:label="@string/title_activity_tip_one_page"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".tipTwoPage"
+            android:label="@string/title_activity_tip_two_page"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".tipThreePage" >
+        </activity>
+        <activity android:name=".profilePage" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 
