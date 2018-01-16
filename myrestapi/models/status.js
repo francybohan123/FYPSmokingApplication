@@ -3,13 +3,10 @@ var restful = require('node-restful');
 var mongoose = restful.mongoose;
 
 var statusSchema = new mongoose.Schema({
-	firstName: String, 
-	surname: String, 
-	dateOfBirth: Date,
-	dateOfQuittingSmoking: Date,
-	amountSmokedPerDay: Number,
-	amountPerPacket: Number, 
-	pricePerPacket: Number
+	fbname: String, 
+	content: String,
+	likes: Number, 
+	comments: Number
 });
 
 //return models: 
