@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import com.example.francisbohan.tipsandmotivations.tipOnePage;
+import com.example.francisbohan.tipsandmotivations.tipTwoPage;
+import com.example.francisbohan.tipsandmotivations.tipThreePage;
 
 public class tipsAndMotivationsPage extends AppCompatActivity {
     ListView listView;

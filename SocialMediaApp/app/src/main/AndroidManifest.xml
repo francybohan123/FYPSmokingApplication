@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.francisbohan.socialmediaapp" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -46,16 +46,16 @@
         <activity android:name=".settingsPage" >
         </activity>
         <activity
-            android:name=".tipOnePage"
+            android:name="motivationsandtips.tipOnePage"
             android:label="@string/title_activity_tip_one_page"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".tipTwoPage"
+            android:name="motivationsandtips.tipTwoPage"
             android:label="@string/title_activity_tip_two_page"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".tipThreePage" >
+        <activity android:name="motivationsandtips.tipTwoPage$tipThreePage" >
         </activity>
         <activity android:name=".profilePage" >
         </activity>
@@ -63,6 +63,12 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name="com.example.francisbohan.tipsandmotivations.tipOnePage" >
+        </activity>
+        <activity android:name="com.example.francisbohan.tipsandmotivations.tipTwoPage" >
+        </activity>
+        <activity android:name="com.example.francisbohan.tipsandmotivations.tipThreePage" >
         </activity>
     </application>
 
