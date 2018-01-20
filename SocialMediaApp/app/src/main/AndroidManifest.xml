@@ -70,6 +70,14 @@
         </activity>
         <activity android:name="com.example.francisbohan.tipsandmotivations.tipThreePage" >
         </activity>
+        <activity android:name="com.example.francisbohan.healthtracker.healthTrackerProgressOne" >
+        </activity>
+        <activity android:name="com.example.francisbohan.healthtracker.healthTrackerProgressTwo" >
+        </activity>
+        <activity android:name="com.example.francisbohan.healthtracker.healthTrackerProgressThree" >
+        </activity>
+        <activity android:name="com.example.francisbohan.healthtracker.healthTrackerProgressFour" >
+        </activity>
     </application>
 
 </manifest>
