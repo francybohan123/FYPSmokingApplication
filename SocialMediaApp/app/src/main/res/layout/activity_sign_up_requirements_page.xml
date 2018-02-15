@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText6" />
+            android:id="@+id/firstname" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText7"
+            android:id="@+id/surname"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
-            android:id="@+id/editText8" />
+            android:id="@+id/dateOfBirth" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
-            android:id="@+id/editText9" />
+            android:id="@+id/dateOfQuittingSmoking" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText10" />
+            android:id="@+id/numberSmokedPerDay" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText11" />
+            android:id="@+id/numberPerPacket" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -190,7 +190,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText12" />
+            android:id="@+id/pricePerPacket" />
 
         <TextView
             android:layout_width="wrap_content"

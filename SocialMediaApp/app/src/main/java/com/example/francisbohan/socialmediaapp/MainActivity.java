@@ -11,14 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -57,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         //new PutDataTask().execute("http://192.168.1.104:4000/api/status/5a5f824ddcea7f6406ac6974");
 
         //make DELETE request
-        new DeleteDataTask().execute("http://192.168.1.104:4000/api/status/5a6118a36728e59431559acf");
+        new DeleteDataTask().execute("http://172.25.213.33:4000/api/status/5a611a516728e59431559ad3");
     }
 
     @Override
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return getData(params[0]);
             } catch (IOException ex) {
-                return "You're a fag!!!!";
+                return "Error!!!!";
             }
         }
 
@@ -171,9 +167,9 @@ public class MainActivity extends AppCompatActivity {
             try{
                 return postData(params[0]);
             }catch(IOException ex){
-                return "You're a fag !!";
+                return "Network Error !!";
             }catch(JSONException ex){
-                return "You're really a fag!!";
+                return "Error !!";
             }
         }
 
@@ -207,10 +203,10 @@ public class MainActivity extends AppCompatActivity {
             try{
                 //Create data to send to server
                 JSONObject dataToSend = new JSONObject();
-                dataToSend.put("firstName", "Francis");
+                dataToSend.put("firstName", "David");
                 dataToSend.put("surname", "Bohan");
-                dataToSend.put("emailAddress", "fortlakefarmhouse@gmail.com");
-                dataToSend.put("dateOfBirth", "1953-11-17");
+                dataToSend.put("emailAddress", "davidbohan@gmail.com");
+                dataToSend.put("dateOfBirth", "1976-01-03");
                 dataToSend.put("dateOfQuitting", "2017-05-11");
                 dataToSend.put("amountSmokedPerDay", 40);
                 dataToSend.put("amountPerPacket", 20);

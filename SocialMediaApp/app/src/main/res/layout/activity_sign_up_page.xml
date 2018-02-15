@@ -66,12 +66,20 @@
             android:id="@+id/textView6"
             android:layout_gravity="center_horizontal" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(name@domain.dns)"
+            android:id="@+id/textView62"
+            android:layout_gravity="center_horizontal" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText3" />
+            android:id="@+id/emailAddress" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,7 +108,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText4" />
+            android:id="@+id/password" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -129,7 +137,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText5" />
+            android:id="@+id/confirmPassword" />
 
         <TextView
             android:layout_width="wrap_content"

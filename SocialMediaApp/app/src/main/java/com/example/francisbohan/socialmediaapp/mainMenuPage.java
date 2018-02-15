@@ -35,7 +35,7 @@ public class mainMenuPage extends AppCompatActivity {
         findViewById(R.id.logoutButton).setOnClickListener(buttonClickListener);
     }
 
-    private View.OnClickListener buttonClickListener = new View.OnClickListener(){
+    private View.OnClickListener buttonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
@@ -43,15 +43,27 @@ public class mainMenuPage extends AppCompatActivity {
                     Intent profileButtonIntent = new Intent(mainMenuPage.this, profilePage.class);
                     startActivity(profileButtonIntent);
                     break;
-            }
 
-            switch (view.getId()) {
                 case R.id.moneySavedButton:
                     Intent moneyButtonIntent = new Intent(mainMenuPage.this, moneySavedPage.class);
                     startActivity(moneyButtonIntent);
                     break;
-            }
 
+                case R.id.cigarettesPassedButton:
+                    Intent cigarettesPassedIntent = new Intent(mainMenuPage.this, cigarettesPassedPage.class);
+                    startActivity(cigarettesPassedIntent);
+                    break;
+
+                    case R.id.settingsButton:
+                        Intent settingsIntent = new Intent(mainMenuPage.this, MainActivity.class);
+                        startActivity(settingsIntent);
+                        break;
+            }
+        }
+    };
+}
+
+/*
             switch (view.getId()) {
                 case R.id.cigarettesPassedButton:
                     Intent cigarettesPassedIntent = new Intent(mainMenuPage.this, cigarettesPassedPage.class);
@@ -95,4 +107,4 @@ public class mainMenuPage extends AppCompatActivity {
             }
         }
     };
-}
+}*/
