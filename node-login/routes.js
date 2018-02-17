@@ -11,7 +11,7 @@ const config = require('./config/config.json');
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.end('Welcome to Learn2Crack !'));
+	router.get('/', (req, res) => res.end('Social Media Smoking Application'));
 
 	router.post('/authenticate', (req, res) => {
 
@@ -19,7 +19,7 @@ module.exports = router => {
 
 		if (!credentials) {
 
-			res.status(400).json({ message: 'Invalid Request !' });
+			res.status(400).json({ message: 'Invalid Request!' });
 
 		} else {
 
@@ -45,7 +45,7 @@ module.exports = router => {
 
 		if (!name || !email || !password || !name.trim() || !email.trim() || !password.trim()) {
 
-			res.status(400).json({message: 'Invalid Request !'});
+			res.status(400).json({message: 'Invalid Request!'});
 
 		} else {
 
@@ -73,7 +73,7 @@ module.exports = router => {
 
 		} else {
 
-			res.status(401).json({ message: 'Invalid Token !' });
+			res.status(401).json({ message: 'Invalid Token!' });
 		}
 	});
 
@@ -86,7 +86,7 @@ module.exports = router => {
 
 			if (!oldPassword || !newPassword || !oldPassword.trim() || !newPassword.trim()) {
 
-				res.status(400).json({ message: 'Invalid Request !' });
+				res.status(400).json({ message: 'Invalid Request!' });
 
 			} else {
 
@@ -99,7 +99,7 @@ module.exports = router => {
 			}
 		} else {
 
-			res.status(401).json({ message: 'Invalid Token !' });
+			res.status(401).json({ message: 'Invalid Token!' });
 		}
 	});
 

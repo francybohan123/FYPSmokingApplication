@@ -16,8 +16,5 @@ const userSchema = mongoose.Schema({
 });
 
 mongoose.Promise = global.Promise;
-//mongodb://<dbuser>:<dbpassword>@ds121726.mlab.com:21726/myfbdb
-
 mongoose.connect('mongodb://francybohan:francybohan@ds121726.mlab.com:21726/myfbdb', { useMongoClient: true })
-
 module.exports = mongoose.model('user', userSchema);        
