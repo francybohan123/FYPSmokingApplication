@@ -38,73 +38,53 @@ public class mainMenuPage extends AppCompatActivity {
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.profileButton:
-                    Intent profileButtonIntent = new Intent(mainMenuPage.this, profilePage.class);
-                    startActivity(profileButtonIntent);
-                    break;
+        switch (view.getId()) {
+            case R.id.profileButton:
+                Intent profileButtonIntent = new Intent(mainMenuPage.this, profilePage.class);
+                startActivity(profileButtonIntent);
+                break;
 
-                case R.id.moneySavedButton:
-                    Intent moneyButtonIntent = new Intent(mainMenuPage.this, moneySavedPage.class);
-                    startActivity(moneyButtonIntent);
-                    break;
+            case R.id.moneySavedButton:
+                Intent moneyButtonIntent = new Intent(mainMenuPage.this, moneySavedPage.class);
+                startActivity(moneyButtonIntent);
+                break;
 
-                case R.id.cigarettesPassedButton:
-                    Intent cigarettesPassedIntent = new Intent(mainMenuPage.this, cigarettesPassedPage.class);
-                    startActivity(cigarettesPassedIntent);
-                    break;
+            case R.id.cigarettesPassedButton:
+                Intent cigarettesPassedIntent = new Intent(mainMenuPage.this, cigarettesPassedPage.class);
+                startActivity(cigarettesPassedIntent);
+                break;
 
-                    case R.id.settingsButton:
-                        Intent settingsIntent = new Intent(mainMenuPage.this, MainActivity.class);
-                        startActivity(settingsIntent);
-                        break;
-            }
+            case R.id.daysSinceQuittingButton:
+                Intent daysSinceQuittingIntent = new Intent(mainMenuPage.this, daysSinceQuittingPage.class);
+                startActivity(daysSinceQuittingIntent);
+                break;
+
+            case R.id.healthTrackerButton:
+                Intent healthTrackerIntent = new Intent(mainMenuPage.this, healthTrackerPage.class);
+                startActivity(healthTrackerIntent);
+                break;
+
+            case R.id.tipsMotivationButton:
+                Intent tipsMotivationsIntent = new Intent(mainMenuPage.this, tipsAndMotivationsPage.class);
+                startActivity(tipsMotivationsIntent);
+                break;
+
+            case R.id.settingsButton:
+                Intent settingsIntent = new Intent(mainMenuPage.this, MainActivity.class);
+                startActivity(settingsIntent);
+                break;
+
+            case R.id.logoutButton:
+                Intent logoutIntent = new Intent(mainMenuPage.this, loginPage.class);
+                startActivity(logoutIntent);
+                break;
+        }
         }
     };
+
+    @Override
+    public void onBackPressed(){
+        Intent logoutIntent = new Intent(mainMenuPage.this, wouldYouLikeToLogOutPage.class);
+        startActivity(logoutIntent);
+    }
 }
-
-/*
-            switch (view.getId()) {
-                case R.id.cigarettesPassedButton:
-                    Intent cigarettesPassedIntent = new Intent(mainMenuPage.this, cigarettesPassedPage.class);
-                    startActivity(cigarettesPassedIntent);
-                    break;
-            }
-
-            switch (view.getId()) {
-                case R.id.daysSinceQuittingButton:
-                    Intent daysSinceQuittingIntent = new Intent(mainMenuPage.this, daysSinceQuittingPage.class);
-                    startActivity(daysSinceQuittingIntent);
-                    break;
-            }
-
-            switch (view.getId()) {
-                case R.id.healthTrackerButton:
-                    Intent healthTrackerIntent = new Intent(mainMenuPage.this, healthTrackerPage.class);
-                    startActivity(healthTrackerIntent);
-                    break;
-            }
-
-            switch (view.getId()) {
-                case R.id.tipsMotivationButton:
-                    Intent tipsMotivationsIntent = new Intent(mainMenuPage.this, tipsAndMotivationsPage.class);
-                    startActivity(tipsMotivationsIntent);
-                    break;
-            }
-
-            switch (view.getId()) {
-                case R.id.settingsButton:
-                    Intent settingsIntent = new Intent(mainMenuPage.this, MainActivity.class);
-                    startActivity(settingsIntent);
-                    break;
-            }
-
-            switch (view.getId()) {
-                case R.id.logoutButton:
-                    Intent logoutIntent = new Intent(mainMenuPage.this, loginPage.class);
-                    startActivity(logoutIntent);
-                    break;
-            }
-        }
-    };
-}*/

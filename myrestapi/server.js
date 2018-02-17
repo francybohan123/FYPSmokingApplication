@@ -13,7 +13,7 @@ mongoose.connect('mongodb://francybohan:francybohan@ds121726.mlab.com:21726/myfb
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
-app.use(connect.logger('dev'));
+app.use(connect.logger('dev')); //logs requests sent 
 app.use(connect.urlencoded());
 
 //routes:

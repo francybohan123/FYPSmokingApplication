@@ -72,6 +72,8 @@
         </activity>
         <activity android:name="com.example.francisbohan.profilePageOptions.personalDescriptionPage" >
         </activity>
+        <activity android:name=".wouldYouLikeToLogOutPage" >
+        </activity>
     </application>
 
 </manifest>

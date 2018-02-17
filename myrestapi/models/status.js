@@ -5,12 +5,13 @@ var mongoose = restful.mongoose;
 var statusSchema = new mongoose.Schema({
         emailAddress: String,
         password: String,
-        //firstName: String,
-        //surname: String,
-        //dateOfBirth: Date,
-        //dateOfQuittingSmoking: Date,
-        //numberSmokedPerDay: Number,
-        //priceOfPacket: Number,
+        firstname: String,
+        surname: String,
+        dateOfBirth: Date,
+        dateOfQuittingSmoking: Date,
+        numberSmokedPerDay: Number,
+        numberPerPacket: Number,
+        pricePerPacket: Number,
 });
 
 //return models: 

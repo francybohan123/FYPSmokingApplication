@@ -1,12 +1,12 @@
 {
-  "name": "restapi",
+  "name": "socialmediasmokingapplicationbackend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "francisbohan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.15.0",
@@ -17,5 +17,5 @@
     "mongoose": "4.4.6"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "nodejs back end for android application"
 }

@@ -2,18 +2,15 @@ package com.example.francisbohan.socialmediaapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.PathEffect;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -25,10 +22,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,13 +31,17 @@ public class signUpRequirementsPage extends AppCompatActivity {
     Button mainMenuButton;
     TextView textMediumInfo, textLargeLogoLQB;
     Typeface value;
-    public String email, password;
-    public String firstnameToDatabase, surnameToDatabase,dobToDatabase, dateOfQuittingSmokingToDatabase, numberSmokedPerDayToDatabase, numberPerPacketToDatabase, pricePerPacketToDatabase;
-    //public String emailValidation, passwordToString;
-
+    String emailAddress, password;
+    String firstnameToDatabase, surnameToDatabase,dobToDatabase, dateOfQuittingSmokingToDatabase, numberSmokedPerDayToDatabase, numberPerPacketToDatabase, pricePerPacketToDatabase;
     EditText firstname, surname, dateOfBirth, dateOfQuittingSmoking, numberSmokedPerDay, numberPerPacket, pricePerPacket;
 
-    public signUpRequirementsPage() {}
+    public signUpRequirementsPage(){}
+
+    public signUpRequirementsPage(String emailDB, String passwordDB){
+        emailAddress = emailDB;
+        password = passwordDB;
+    }
+
 
     public signUpRequirementsPage(String firstnameToDB, String surnameToDB, String DOBToDB, String dateQuitSmokingToDB, String numberSmokedPerDayToDB, String numberPerPacketToDB, String pricePerPacketToDB){
         firstnameToDatabase = firstnameToDB;
@@ -52,11 +51,6 @@ public class signUpRequirementsPage extends AppCompatActivity {
         numberSmokedPerDayToDatabase = numberSmokedPerDayToDB;
         numberPerPacketToDatabase = numberPerPacketToDB;
         pricePerPacketToDatabase = pricePerPacketToDB;
-    }
-
-    public signUpRequirementsPage(String emailAddressToDatabase, String passwordToDatabase) {
-        email = emailAddressToDatabase;
-        password =  passwordToDatabase;
     }
 
     @Override
@@ -81,6 +75,7 @@ public class signUpRequirementsPage extends AppCompatActivity {
         mainMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String validateFirstname = "[A-Z][a-zA-Z]{3,15}";
                 String validateSurname = "[A-Z][a-zA-Z]{3,15}";
                 String validateDate = "((19|20)\\d\\d)/(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])";
@@ -111,8 +106,8 @@ public class signUpRequirementsPage extends AppCompatActivity {
 
                 if(firstnameMatcher.matches() && surnameMatcher.matches() && dobMatcher.matches() && dateOfQuittingSmokingMatcher.matches() && numberSmokedPerDayMatcher.matches() && numberPerPacketMatcher.matches() && pricePerPacketMatcher.matches()){
                     Toast.makeText(getApplicationContext(), "Credentials entered correctly", Toast.LENGTH_LONG).show();
-                    new PostDataTask().execute("http://192.168.0.32:4000/api/status");
                     Intent signUpContinueIntent = new Intent(signUpRequirementsPage.this, mainMenuPage.class);
+                    new PostDataTask().execute("http://192.168.1.102:4000/api/status/");
                     startActivity(signUpContinueIntent);
                 }
                 if(!firstnameMatcher.matches()){
@@ -131,7 +126,7 @@ public class signUpRequirementsPage extends AppCompatActivity {
                 }
 
                 if(!dateOfQuittingSmokingMatcher.matches()){
-                    Toast.makeText(getApplicationContext(), "Date of birth entered incorrectly", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Date of quitting entered incorrectly", Toast.LENGTH_LONG).show();
                     dateOfQuittingSmoking.setError("yyyy/mm/dd");
                 }
 
@@ -179,7 +174,6 @@ public class signUpRequirementsPage extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            //mResult.setText(result);
             if (progressDialog != null) {
                 progressDialog.dismiss();
             }
@@ -194,7 +188,7 @@ public class signUpRequirementsPage extends AppCompatActivity {
             try {
                 //Create data to send to server
                 JSONObject dataToSend = new JSONObject();
-                dataToSend.put("emailAddress", email);
+                dataToSend.put("emailAddress", emailAddress);
                 dataToSend.put("password", password);
                 dataToSend.put("firstname", firstnameToDatabase);
                 dataToSend.put("surname", surnameToDatabase);
@@ -202,7 +196,7 @@ public class signUpRequirementsPage extends AppCompatActivity {
                 dataToSend.put("dateOfQuittingSmoking", dateOfQuittingSmokingToDatabase);
                 dataToSend.put("numberSmokedPerDay", numberSmokedPerDayToDatabase);
                 dataToSend.put("numberPerPacket", numberPerPacketToDatabase);
-                dataToSend.put("pricePerPacket", pricePerPacket);
+                dataToSend.put("pricePerPacket", pricePerPacketToDatabase);
                 URL url = new URL(urlPath);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setReadTimeout(10000 /* milliseconds */);
