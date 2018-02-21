@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(logger('dev'));
 
 require('./routes')(router);
-app.use('/api/v1', router);
+app.use('/', router);
 
 app.listen(port);
 

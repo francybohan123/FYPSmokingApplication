@@ -11,7 +11,7 @@ const config = require('./config/config.json');
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.end('Social Media Smoking Application'));
+	//router.get('/', (req, res) => res.end('Social Media Smoking Application'));
 
 	router.post('/authenticate', (req, res) => {
 
