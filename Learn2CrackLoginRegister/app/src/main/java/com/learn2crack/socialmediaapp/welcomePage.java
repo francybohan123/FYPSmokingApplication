@@ -9,10 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.learn2crack.MainActivity;
-import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
-import com.learn2crack.fragments.LoginFragment;
-import com.learn2crack.fragments.RegisterFragment;
 
 public class welcomePage extends AppCompatActivity {
     TextView textLQB, textLittleQuitBuddy;

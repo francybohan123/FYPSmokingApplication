@@ -26,6 +26,9 @@ import com.learn2crack.network.NetworkUtil;
 import com.learn2crack.socialmediaapp.mainMenuPage;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.adapter.rxjava.HttpException;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -69,7 +72,6 @@ public class LoginFragment extends Fragment {
         mProgressBar = (ProgressBar) v.findViewById(R.id.progress);
         mTvRegister = (TextView) v.findViewById(R.id.tv_register);
         mTvForgotPassword = (TextView) v.findViewById(R.id.tv_forgot_password);
-
         mBtLogin.setOnClickListener(view -> login());
         mTvRegister.setOnClickListener(view -> goToRegister());
         mTvForgotPassword.setOnClickListener(view -> showDialog());
@@ -92,13 +94,13 @@ public class LoginFragment extends Fragment {
         if (!validateEmail(email)) {
 
             err++;
-            mTiEmail.setError("Email should be valid !");
+            mTiEmail.setError("Email should be valid!");
         }
 
         if (!validateFields(password)) {
 
             err++;
-            mTiPassword.setError("Password should not be empty !");
+            mTiPassword.setError("Password must be 6-15 characters long and contain at least: 1 Uppercase, 1 Lowercase, 1 Numeral, 1 - !@#$%^&*");
         }
 
         if (err == 0) {
@@ -108,7 +110,7 @@ public class LoginFragment extends Fragment {
 
         } else {
 
-            showSnackBarMessage("Enter Valid Details !");
+            showSnackBarMessage("Enter Valid Details!");
         }
     }
 
@@ -138,7 +140,7 @@ public class LoginFragment extends Fragment {
         mEtEmail.setText(null);
         mEtPassword.setText(null);
 
-        Intent intent = new Intent(getActivity(), mainMenuPage.class);
+        Intent intent = new Intent(getActivity(), ProfileActivity.class);
         startActivity(intent);
 
     }

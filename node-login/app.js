@@ -9,7 +9,7 @@ const port 	   = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
-
+//app.use(express.static('../client'));
 require('./routes')(router);
 app.use('/', router);
 

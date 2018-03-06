@@ -1,5 +1,6 @@
 package com.learn2crack;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,8 @@ import com.learn2crack.fragments.ChangePasswordDialog;
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
+import com.learn2crack.socialmediaapp.mainMenuPage;
+import com.learn2crack.socialmediaapp.welcomePage;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
 import retrofit2.adapter.rxjava.HttpException;
@@ -29,6 +32,12 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private TextView mTvName;
     private TextView mTvEmail;
     private TextView mTvDate;
+    private TextView mTvDateOfBirth;
+    private TextView mTvDateOfQuittingSmoking;
+    private TextView mTvNumberSmokedPerDay;
+    private TextView mTvNumberPerPacket;
+    private TextView mTvPricePerPacket;
+    private Button mBtMainMenu;
     private Button mBtChangePassword;
     private Button mBtLogout;
     private ProgressBar mProgressbar;
@@ -52,9 +61,16 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvName = (TextView) findViewById(R.id.tv_name);
         mTvEmail = (TextView) findViewById(R.id.tv_email);
         mTvDate = (TextView) findViewById(R.id.tv_date);
+        mTvDateOfBirth = (TextView) findViewById(R.id.tv_dateofbirth);
+        mTvDateOfQuittingSmoking = (TextView) findViewById(R.id.tv_dateofquittingsmoking);
+        mTvNumberSmokedPerDay = (TextView) findViewById(R.id.tv_numbersmokedperday);
+        mTvNumberPerPacket = (TextView) findViewById(R.id.tv_numberperpacket);
+        mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);
+        mBtMainMenu = (Button) findViewById(R.id.mBtMainMenu);
         mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
         mProgressbar = (ProgressBar) findViewById(R.id.progress);
+        mBtMainMenu.setOnClickListener(view -> mainMenu());
         mBtChangePassword.setOnClickListener(view -> showDialog());
         mBtLogout.setOnClickListener(view -> logout());
     }
@@ -66,14 +82,22 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mEmail = mSharedPreferences.getString(Constants.EMAIL,"");
     }
 
-    public void logout() {
+    private void logout() {
 
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putString(Constants.EMAIL,"");
         editor.putString(Constants.TOKEN,"");
         editor.apply();
+        Intent logInIntent = new Intent(ProfileActivity.this,welcomePage.class);
+        startActivity(logInIntent);
         finish();
     }
+
+    private void mainMenu(){
+        Intent logInIntent = new Intent(ProfileActivity.this,mainMenuPage.class);
+        startActivity(logInIntent);
+    }
+
 
     private void showDialog(){
 
@@ -91,6 +115,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
 
         mSubscriptions.add(NetworkUtil.getRetrofit(mToken).getProfile(mEmail)
                 .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse,this::handleError));
     }
@@ -101,6 +126,11 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvName.setText(user.getName());
         mTvEmail.setText(user.getEmail());
         mTvDate.setText(user.getCreated_at());
+/*        mTvDateOfBirth.setText(user.getDateOfBirth());
+        mTvDateOfQuittingSmoking.setText(user.getDateOfQuittingSmoking());
+        mTvNumberSmokedPerDay.setText(user.getNumberSmokedPerDay());
+        mTvNumberPerPacket.setText(user.getNumberPerPacket());
+        mTvPricePerPacket.setText(user.getPricePerPacket());*/
     }
 
     private void handleError(Throwable error) {

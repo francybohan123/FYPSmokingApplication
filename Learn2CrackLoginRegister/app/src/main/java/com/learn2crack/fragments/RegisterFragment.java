@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +17,11 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.learn2crack.MainActivity;
 import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
-import com.learn2crack.socialmediaapp.mainMenuPage;
-import com.learn2crack.socialmediaapp.signUpRequirementsPage;
-import com.learn2crack.socialmediaapp.welcomePage;
 
 import java.io.IOException;
 
@@ -35,23 +30,37 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
+import static com.learn2crack.utils.Validation.validateDateOfBirth;
+import static com.learn2crack.utils.Validation.validateDateOfQuittingSmoking;
 import static com.learn2crack.utils.Validation.validateEmail;
 import static com.learn2crack.utils.Validation.validateFields;
+import static com.learn2crack.utils.Validation.validateNumberPerPacket;
+import static com.learn2crack.utils.Validation.validateNumberSmokedPerDay;
+import static com.learn2crack.utils.Validation.validatePricePerPacket;
 
-public class RegisterFragment extends Fragment{
+public class RegisterFragment extends Fragment {
 
     public static final String TAG = RegisterFragment.class.getSimpleName();
 
     private EditText mEtName;
     private EditText mEtEmail;
     private EditText mEtPassword;
+    private EditText mEtDateOfBirth;
+    private EditText mEtDateOfQuittingSmoking;
+    private EditText mEtNumberSmokedPerDay;
+    private EditText mEtNumberPerPacket;
+    private EditText mEtPricePerPacket;
     private Button   mBtRegister;
     private TextView mTvLogin;
     private TextInputLayout mTiName;
     private TextInputLayout mTiEmail;
     private TextInputLayout mTiPassword;
+    private TextInputLayout mTiDateOfBirth;
+    private TextInputLayout mTiDateOfQuittingSmoking;
+    private TextInputLayout mTiNumberSmokedPerDay;
+    private TextInputLayout mTiNumberPerPacket;
+    private TextInputLayout mTiPricePerPacket;
     private ProgressBar mProgressbar;
-
     private CompositeSubscription mSubscriptions;
 
     @Nullable
@@ -69,11 +78,21 @@ public class RegisterFragment extends Fragment{
         mEtName = (EditText) v.findViewById(R.id.et_name);
         mEtEmail = (EditText) v.findViewById(R.id.et_email);
         mEtPassword = (EditText) v.findViewById(R.id.et_password);
+/*        mEtDateOfBirth = (EditText) v.findViewById(R.id.et_dateofbirth);
+        mEtDateOfQuittingSmoking = (EditText) v.findViewById(R.id.et_dateofquittingsmoking);
+        mEtNumberSmokedPerDay = (EditText) v.findViewById(R.id.et_numbersmokedperday);
+        mEtNumberPerPacket = (EditText) v.findViewById(R.id.et_numberperpacket);
+        mEtPricePerPacket = (EditText) v.findViewById(R.id.et_priceperpacket);*/
         mBtRegister = (Button) v.findViewById(R.id.btn_register);
         mTvLogin = (TextView) v.findViewById(R.id.tv_login);
         mTiName = (TextInputLayout) v.findViewById(R.id.ti_name);
         mTiEmail = (TextInputLayout) v.findViewById(R.id.ti_email);
         mTiPassword = (TextInputLayout) v.findViewById(R.id.ti_password);
+/*        mTiDateOfBirth = (TextInputLayout) v.findViewById(R.id.ti_dateofbirth);
+        mTiDateOfQuittingSmoking = (TextInputLayout) v.findViewById(R.id.ti_dateofquittingsmoking);
+        mTiNumberSmokedPerDay = (TextInputLayout) v.findViewById(R.id.ti_numbersmokedperday);
+        mTiNumberPerPacket = (TextInputLayout) v.findViewById(R.id.ti_numberperpacket);
+        mTiPricePerPacket = (TextInputLayout) v.findViewById(R.id.ti_priceperpacket);*/
         mProgressbar = (ProgressBar) v.findViewById(R.id.progress);
 
         mBtRegister.setOnClickListener(view -> register());
@@ -87,26 +106,61 @@ public class RegisterFragment extends Fragment{
         String name = mEtName.getText().toString();
         String email = mEtEmail.getText().toString();
         String password = mEtPassword.getText().toString();
+/*        String dateOfBirth = mEtDateOfBirth.getText().toString();
+        String dateOfQuittingSmoking = mEtDateOfQuittingSmoking.getText().toString();
+        String numberSmokedPerDay = mEtNumberSmokedPerDay.getText().toString();
+        String numberPerPacket = mEtNumberPerPacket.getText().toString();
+        String pricePerPacket = mEtPricePerPacket.getText().toString();*/
 
         int err = 0;
 
         if (!validateFields(name)) {
 
             err++;
-            mTiName.setError("Name should not be empty !");
+            mTiName.setError("Name should not be empty!");
         }
 
         if (!validateEmail(email)) {
 
             err++;
-            mTiEmail.setError("Email should be valid !");
+            mTiEmail.setError("Email should be valid!");
         }
 
         if (!validateFields(password)) {
 
             err++;
-            mTiPassword.setError("Password should not be empty !");
+            mTiPassword.setError("Password should not be empty!");
         }
+
+/*        if(!validateDateOfBirth(dateOfBirth)){
+
+            err++;
+            mTiDateOfBirth.setError("Date of birth should not be empty!");
+        }
+
+        if(!validateDateOfQuittingSmoking(dateOfQuittingSmoking)){
+
+            err++;
+            mTiDateOfQuittingSmoking.setError("Date of quitting smoking should not be empty!");
+        }
+
+        if(!validateNumberSmokedPerDay(numberSmokedPerDay)) {
+
+            err++;
+            mTiNumberSmokedPerDay.setError("Number smoked per day should not be empty!");
+        }
+
+        if(!validateNumberPerPacket(numberPerPacket)){
+
+            err++;
+            mTiNumberPerPacket.setError("Number per packet should not be empty!");
+        }
+
+        if(!validatePricePerPacket(pricePerPacket)) {
+
+            err++;
+            mTiPricePerPacket.setError("Price per packet should not be empty!");
+        }*/
 
         if (err == 0) {
 
@@ -114,12 +168,18 @@ public class RegisterFragment extends Fragment{
             user.setName(name);
             user.setEmail(email);
             user.setPassword(password);
+/*            user.setDateOfBirth(dateOfBirth);
+            user.setDateOfQuittingSmoking(dateOfQuittingSmoking);
+            user.setNumberSmokedPerDay(numberSmokedPerDay);
+            user.setNumberPerPacket(numberPerPacket);
+            user.setPricePerPacket(pricePerPacket);*/
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), ProfileActivity.class);
+            getActivity().startActivity(intent);
 
             mProgressbar.setVisibility(View.VISIBLE);
             registerProcess(user);
-/*            Intent signUpContinueIntent;
-            signUpContinueIntent = new Intent(RegisterFragment.this, signUpRequirementsPage.class);
-            startActivity(signUpContinueIntent);*/
+
         } else {
 
             showSnackBarMessage("Enter Valid Details !");
@@ -131,12 +191,18 @@ public class RegisterFragment extends Fragment{
         mTiName.setError(null);
         mTiEmail.setError(null);
         mTiPassword.setError(null);
+/*        mTiDateOfBirth.setError(null);
+        mTiDateOfQuittingSmoking.setError(null);
+        mTiNumberSmokedPerDay.setError(null);
+        mTiNumberPerPacket.setError(null);
+        mTiPricePerPacket.setError(null);*/
     }
 
     private void registerProcess(User user) {
 
         mSubscriptions.add(NetworkUtil.getRetrofit().register(user)
                 .observeOn(AndroidSchedulers.mainThread())
+                //.unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse,this::handleError));
     }

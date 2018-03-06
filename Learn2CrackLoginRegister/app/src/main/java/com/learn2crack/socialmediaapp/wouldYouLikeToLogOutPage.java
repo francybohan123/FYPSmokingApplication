@@ -2,68 +2,75 @@ package com.learn2crack.socialmediaapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-
-import com.learn2crack.MainActivity;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
 import com.learn2crack.utils.Constants;
+import rx.subscriptions.CompositeSubscription;
 
 public class wouldYouLikeToLogOutPage extends AppCompatActivity {
-    Button yesLogOutButton, noDontLogOutButton;
     private SharedPreferences mSharedPreferences;
+    private ProgressBar mProgressbar;
     private String mToken;
     private String mEmail;
-    private Button mBtLogout;
+    private Button logoutButton;
+    private Button noDontLogoutButton;
+    private CompositeSubscription mSubscriptions;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mSubscriptions = new CompositeSubscription();
         setContentView(R.layout.activity_would_you_like_to_log_out_page);
-
-        yesLogOutButton = (Button) findViewById(R.id.mBtLogout);
-        yesLogOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent logInIntent = new Intent(wouldYouLikeToLogOutPage.this, MainActivity.class);
-                startActivity(logInIntent);
-                initViews();
-            }
-        });
-        noDontLogOutButton = (Button) findViewById(R.id.noDontLogOutButton);
-        noDontLogOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent signUpIntent = new Intent(wouldYouLikeToLogOutPage.this, mainMenuPage.class);
-                startActivity(signUpIntent);
-            }
-        });
+        mSubscriptions = new CompositeSubscription();
+        initSharedPreferences();
+        initViews();
     }
+
     private void initViews() {
 
-        mBtLogout = (Button) findViewById(R.id.btn_logout);
-        mBtLogout.setOnClickListener(view -> logout());
+        mProgressbar = (ProgressBar) findViewById(R.id.progress);
+        noDontLogoutButton = (Button) findViewById(R.id.mBtDontLogout);
+        logoutButton = (Button) findViewById(R.id.mBtLogout);
+        noDontLogoutButton.setOnClickListener(view -> backToMainMenu());
+        logoutButton.setOnClickListener(view -> logout());
     }
+
     private void initSharedPreferences() {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mToken = mSharedPreferences.getString(Constants.TOKEN,"");
         mEmail = mSharedPreferences.getString(Constants.EMAIL,"");
     }
+
+    private void backToMainMenu(){
+
+        Intent profileButtonIntent = new Intent(wouldYouLikeToLogOutPage.this, mainMenuPage.class);
+        startActivity(profileButtonIntent);
+    }
+
     public void logout() {
 
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putString(Constants.EMAIL,"");
         editor.putString(Constants.TOKEN,"");
         editor.apply();
+        Intent profileButtonIntent = new Intent(wouldYouLikeToLogOutPage.this, welcomePage.class);
+        startActivity(profileButtonIntent);
         finish();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-       // mSubscriptions.unsubscribe();
+        mSubscriptions.unsubscribe();
     }
 }

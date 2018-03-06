@@ -34,56 +34,56 @@
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/profileButton"
+            android:id="@+id/mBtprofile"
             android:src="@drawable/profilesymbol"
             android:layout_below="@+id/textMediumLogIn"
-            android:layout_toStartOf="@+id/daysSinceQuittingButton" />
+            android:layout_toStartOf="@+id/mBtDaysSinceQuitting" />
 
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/moneySavedButton"
-            android:layout_alignBottom="@+id/profileButton"
-            android:layout_toEndOf="@+id/profileButton"
+            android:id="@+id/mBtMoneySaved"
+            android:layout_alignBottom="@+id/mBtprofile"
+            android:layout_toEndOf="@+id/mBtprofile"
             android:src="@drawable/money" />
 
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/cigarettesPassedButton"
-            android:layout_below="@+id/profileButton"
+            android:id="@+id/mBtCigarettesPassed"
+            android:layout_below="@+id/mBtprofile"
             android:layout_alignParentStart="true"
             android:src="@drawable/cigarettesymbol" />
 
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/daysSinceQuittingButton"
-            android:layout_alignBottom="@+id/cigarettesPassedButton"
-            android:layout_toEndOf="@+id/cigarettesPassedButton"
+            android:id="@+id/mBtDaysSinceQuitting"
+            android:layout_alignBottom="@+id/mBtCigarettesPassed"
+            android:layout_toEndOf="@+id/mBtCigarettesPassed"
             android:src="@drawable/calendersymbol" />
 
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/healthTrackerButton"
-            android:layout_below="@+id/cigarettesPassedButton"
+            android:id="@+id/mBtHealthTracker"
+            android:layout_below="@+id/mBtCigarettesPassed"
             android:layout_alignParentStart="true"
             android:src="@drawable/healthsymbol" />
 
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/tipsMotivationButton"
-            android:layout_alignBottom="@+id/healthTrackerButton"
-            android:layout_toEndOf="@+id/healthTrackerButton"
+            android:id="@+id/mBtTipsAndMotivations"
+            android:layout_alignBottom="@+id/mBtHealthTracker"
+            android:layout_toEndOf="@+id/mBtHealthTracker"
             android:src="@drawable/tipssymbol" />
 
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/settingsButton"
-            android:layout_below="@+id/healthTrackerButton"
+            android:id="@+id/mBtSettings"
+            android:layout_below="@+id/mBtHealthTracker"
             android:layout_alignParentStart="true"
             android:src="@drawable/settingsicon" />
 
@@ -91,8 +91,8 @@
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:id="@+id/mBtLogout"
-            android:layout_alignBottom="@+id/settingsButton"
-            android:layout_toEndOf="@+id/settingsButton"
+            android:layout_alignBottom="@+id/mBtSettings"
+            android:layout_toEndOf="@+id/mBtSettings"
             android:src="@drawable/logoutsymbol" />
     </RelativeLayout>
 </ScrollView>
