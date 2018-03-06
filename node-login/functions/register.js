@@ -15,22 +15,23 @@ exports.registerUser = (name, email, password) =>
 			name: name,
 			email: email,
 			hashed_password: hash,
-			created_at: new Date()
+			created_at: new Date(),
+			//add values here 
 		});
 
 		newUser.save()
 
-		.then(() => resolve({ status: 201, message: 'User Registered Sucessfully !' }))
+		.then(() => resolve({ status: 201, message: 'User Registered Sucessfully!' }))
 
 		.catch(err => {
 
 			if (err.code == 11000) {
 						
-				reject({ status: 409, message: 'User Already Registered !' });
+				reject({ status: 409, message: 'User Already Registered!' });
 
 			} else {
 
-				reject({ status: 500, message: 'Internal Server Error !' });
+				reject({ status: 500, message: 'Internal Server Error!' });
 			}
 		});
 	});

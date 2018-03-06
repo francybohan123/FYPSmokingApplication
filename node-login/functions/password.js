@@ -28,13 +28,13 @@ exports.changePassword = (email, password, newPassword) =>
 
 			} else {
 
-				reject({ status: 401, message: 'Invalid Old Password !' });
+				reject({ status: 401, message: 'Invalid Old Password!' });
 			}
 		})
 
-		.then(user => resolve({ status: 200, message: 'Password Updated Sucessfully !' }))
+		.then(user => resolve({ status: 200, message: 'Password Updated Sucessfully!' }))
 
-		.catch(err => reject({ status: 500, message: 'Internal Server Error !' }));
+		.catch(err => reject({ status: 500, message: 'Internal Server Error!' }));
 
 	});
 
@@ -50,7 +50,7 @@ exports.resetPasswordInit = email =>
 
 			if (users.length == 0) {
 
-				reject({ status: 404, message: 'User Not Found !' });
+				reject({ status: 404, message: 'User Not Found!' });
 
 			} else {
 
@@ -91,13 +91,13 @@ exports.resetPasswordInit = email =>
 		.then(info => {
 
 			console.log(info);
-			resolve({ status: 200, message: 'Check mail for instructions' })
+			resolve({ status: 200, message: 'Check mail for instructions!' })
 		})
 
 		.catch(err => {
 
 			console.log(err);
-			reject({ status: 500, message: 'Internal Server Error !' });
+			reject({ status: 500, message: 'Internal Server Error!' });
 
 		});
 	});
@@ -122,7 +122,7 @@ exports.resetPasswordFinish = (email, token, password) =>
 
 			} else {
 
-				reject({ status: 401, message: 'Time Out ! Try again' });
+				reject({ status: 401, message: 'Time Out! Try again!' });
 			}
 		})
 
@@ -140,12 +140,12 @@ exports.resetPasswordFinish = (email, token, password) =>
 
 			} else {
 
-				reject({ status: 401, message: 'Invalid Token !' });
+				reject({ status: 401, message: 'Invalid Token!' });
 			}
 		})
 
-		.then(user => resolve({ status: 200, message: 'Password Changed Sucessfully !' }))
+		.then(user => resolve({ status: 200, message: 'Password Changed Sucessfully!' }))
 
-		.catch(err => reject({ status: 500, message: 'Internal Server Error !' }));
+		.catch(err => reject({ status: 500, message: 'Internal Server Error!' }));
 
 	});

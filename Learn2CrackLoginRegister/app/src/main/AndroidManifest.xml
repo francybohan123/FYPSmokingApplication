@@ -35,7 +35,10 @@
         <activity android:name=".socialmediaapp.mainMenuPage" />
         <activity android:name=".socialmediaapp.signUpRequirementsPage" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".socialmediaapp.wouldYouLikeToLogOutPage"></activity>
+        <activity android:name=".socialmediaapp.wouldYouLikeToLogOutPage" />
+        <activity android:name=".socialmediaapp.moneySavedPage" />
+        <activity android:name=".socialmediaapp.daysSinceQuittingPage" />
+        <activity android:name=".socialmediaapp.cigarettesPassedPage"></activity>
     </application>
 
 </manifest>

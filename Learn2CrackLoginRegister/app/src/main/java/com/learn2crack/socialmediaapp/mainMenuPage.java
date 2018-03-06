@@ -90,19 +90,19 @@ public class mainMenuPage extends AppCompatActivity {
 
     private void moneySaved(){
 
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, ProfileActivity.class);
+        Intent profileButtonIntent = new Intent(mainMenuPage.this, moneySavedPage.class);
         startActivity(profileButtonIntent);
     }
 
     private void cigarettesPassed(){
 
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, ProfileActivity.class);
+        Intent profileButtonIntent = new Intent(mainMenuPage.this, cigarettesPassedPage.class);
         startActivity(profileButtonIntent);
     }
 
     private void daysSinceQuitting(){
 
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, ProfileActivity.class);
+        Intent profileButtonIntent = new Intent(mainMenuPage.this, daysSinceQuittingPage.class);
         startActivity(profileButtonIntent);
     }
 

@@ -115,7 +115,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
 
         mSubscriptions.add(NetworkUtil.getRetrofit(mToken).getProfile(mEmail)
                 .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(Schedulers.io())
+                //.unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse,this::handleError));
     }
@@ -171,7 +171,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     @Override
     public void onPasswordChanged() {
 
-        showSnackBarMessage("Password Changed Successfully !");
+        showSnackBarMessage("Password Changed Successfully!");
     }
 }
 

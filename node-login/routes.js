@@ -13,6 +13,11 @@ module.exports = router => {
 
 	router.get('/', (req, res) => res.end('Francy'));
 
+		/*router.get('/', function(req, res){
+		res.end("Social Media Smoking Application");*/
+
+	});
+
 	router.post('/authenticate', (req, res) => {
 
 		const credentials = auth(req);
