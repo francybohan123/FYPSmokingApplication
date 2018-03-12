@@ -1,8 +1,5 @@
 package com.learn2crack.model;
 
-
-import java.util.Date;
-
 public class User {
 
     private String name;

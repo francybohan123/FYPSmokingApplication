@@ -11,12 +11,7 @@ const config = require('./config/config.json');
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.end('Francy'));
-
-		/*router.get('/', function(req, res){
-		res.end("Social Media Smoking Application");*/
-
-	});
+	router.get('/', (req, res) => res.end('Welcome to Learn2Crack !'));
 
 	router.post('/authenticate', (req, res) => {
 
@@ -33,7 +28,7 @@ module.exports = router => {
 			.then(result => {
 
 				const token = jwt.sign(result, config.secret, { expiresIn: 1440 });
-			
+
 				res.status(result.status).json({ message: result.message, token: token });
 
 			})

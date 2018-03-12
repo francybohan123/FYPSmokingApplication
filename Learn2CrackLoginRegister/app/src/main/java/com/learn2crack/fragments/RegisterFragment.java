@@ -22,6 +22,8 @@ import com.learn2crack.R;
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
+import com.learn2crack.socialmediaapp.mainMenuPage;
+import com.learn2crack.socialmediaapp.welcomeClass;
 
 import java.io.IOException;
 
@@ -174,7 +176,7 @@ public class RegisterFragment extends Fragment {
             user.setNumberPerPacket(numberPerPacket);
             user.setPricePerPacket(pricePerPacket);*/
             Intent intent = new Intent();
-            intent.setClass(getActivity(), ProfileActivity.class);
+            intent.setClass(getActivity(), welcomeClass.class);
             getActivity().startActivity(intent);
 
             mProgressbar.setVisibility(View.VISIBLE);
@@ -191,7 +193,7 @@ public class RegisterFragment extends Fragment {
         mTiName.setError(null);
         mTiEmail.setError(null);
         mTiPassword.setError(null);
-/*        mTiDateOfBirth.setError(null);
+        /*mTiDateOfBirth.setError(null);
         mTiDateOfQuittingSmoking.setError(null);
         mTiNumberSmokedPerDay.setError(null);
         mTiNumberPerPacket.setError(null);
@@ -202,7 +204,7 @@ public class RegisterFragment extends Fragment {
 
         mSubscriptions.add(NetworkUtil.getRetrofit().register(user)
                 .observeOn(AndroidSchedulers.mainThread())
-                //.unsubscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse,this::handleError));
     }
@@ -224,8 +226,8 @@ public class RegisterFragment extends Fragment {
             try {
 
                 String errorBody = ((HttpException) error).response().errorBody().string();
-                Response response = gson.fromJson(errorBody,Response.class);
-                showSnackBarMessage(response.getMessage());
+                /*Response response = gson.fromJson(errorBody,Response.class);
+                showSnackBarMessage(response.getMessage());*/
 
             } catch (IOException e) {
                 e.printStackTrace();

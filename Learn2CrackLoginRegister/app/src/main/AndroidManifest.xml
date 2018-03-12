@@ -38,7 +38,8 @@
         <activity android:name=".socialmediaapp.wouldYouLikeToLogOutPage" />
         <activity android:name=".socialmediaapp.moneySavedPage" />
         <activity android:name=".socialmediaapp.daysSinceQuittingPage" />
-        <activity android:name=".socialmediaapp.cigarettesPassedPage"></activity>
+        <activity android:name=".socialmediaapp.cigarettesPassedPage" />
+        <activity android:name=".socialmediaapp.welcomeClass"></activity>
     </application>
 
 </manifest>

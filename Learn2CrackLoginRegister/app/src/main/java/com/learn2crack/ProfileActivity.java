@@ -61,11 +61,11 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvName = (TextView) findViewById(R.id.tv_name);
         mTvEmail = (TextView) findViewById(R.id.tv_email);
         mTvDate = (TextView) findViewById(R.id.tv_date);
-        mTvDateOfBirth = (TextView) findViewById(R.id.tv_dateofbirth);
+        /*mTvDateOfBirth = (TextView) findViewById(R.id.tv_dateofbirth);
         mTvDateOfQuittingSmoking = (TextView) findViewById(R.id.tv_dateofquittingsmoking);
         mTvNumberSmokedPerDay = (TextView) findViewById(R.id.tv_numbersmokedperday);
         mTvNumberPerPacket = (TextView) findViewById(R.id.tv_numberperpacket);
-        mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);
+        mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);*/
         mBtMainMenu = (Button) findViewById(R.id.mBtMainMenu);
         mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
@@ -144,8 +144,8 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
             try {
 
                 String errorBody = ((HttpException) error).response().errorBody().string();
-                Response response = gson.fromJson(errorBody,Response.class);
-                showSnackBarMessage(response.getMessage());
+                //Response response = gson.fromJson(errorBody,Response.class);
+                //showSnackBarMessage(response.getMessage());
 
             } catch (IOException e) {
                 e.printStackTrace();
