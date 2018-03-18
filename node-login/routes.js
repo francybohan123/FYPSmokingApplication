@@ -42,18 +42,19 @@ module.exports = router => {
 		const name = req.body.name;
 		const email = req.body.email;
 		const password = req.body.password;
+		const dateOfBirth = req.body.dateOfBirth;
 
-		if (!name || !email || !password || !name.trim() || !email.trim() || !password.trim()) {
+		if (!name || !email || !password || !dateOfBirth || !name.trim() || !email.trim() || !password.trim() || !dateOfBirth.trim()) {
 
 			res.status(400).json({message: 'Invalid Request !'});
 
 		} else {
 
-			register.registerUser(name, email, password)
+			register.registerUser(name, email, password, dateOfBirth)
 
 			.then(result => {
 
-				res.setHeader('Location', '/users/'+email);
+				res.setHeader('Location', '/users'+ email);
 				res.status(result.status).json({ message: result.message })
 			})
 

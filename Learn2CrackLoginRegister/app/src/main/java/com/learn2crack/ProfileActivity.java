@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.learn2crack.chat.chatRoom;
 import com.learn2crack.fragments.ChangePasswordDialog;
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
@@ -38,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private TextView mTvNumberPerPacket;
     private TextView mTvPricePerPacket;
     private Button mBtMainMenu;
+    private Button mBtchatRoom;
     private Button mBtChangePassword;
     private Button mBtLogout;
     private ProgressBar mProgressbar;
@@ -67,10 +69,12 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvNumberPerPacket = (TextView) findViewById(R.id.tv_numberperpacket);
         mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);*/
         mBtMainMenu = (Button) findViewById(R.id.mBtMainMenu);
+        mBtchatRoom = (Button) findViewById(R.id.mBtchatRoom);
         mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
         mProgressbar = (ProgressBar) findViewById(R.id.progress);
         mBtMainMenu.setOnClickListener(view -> mainMenu());
+        mBtchatRoom.setOnClickListener(view -> chatRoom());
         mBtChangePassword.setOnClickListener(view -> showDialog());
         mBtLogout.setOnClickListener(view -> logout());
     }
@@ -95,6 +99,11 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
 
     private void mainMenu(){
         Intent logInIntent = new Intent(ProfileActivity.this,mainMenuPage.class);
+        startActivity(logInIntent);
+    }
+
+    private void chatRoom(){
+        Intent logInIntent = new Intent(ProfileActivity.this,chatRoom.class);
         startActivity(logInIntent);
     }
 

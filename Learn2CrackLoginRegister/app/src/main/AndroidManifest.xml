@@ -39,7 +39,8 @@
         <activity android:name=".socialmediaapp.moneySavedPage" />
         <activity android:name=".socialmediaapp.daysSinceQuittingPage" />
         <activity android:name=".socialmediaapp.cigarettesPassedPage" />
-        <activity android:name=".socialmediaapp.welcomeClass"></activity>
+        <activity android:name=".socialmediaapp.welcomeClass" />
+        <activity android:name=".chat.chatRoom" />
     </application>
 
 </manifest>

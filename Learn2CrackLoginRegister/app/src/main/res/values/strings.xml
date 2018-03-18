@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Learn2Crack</string>
+    <string name="app_name">Social Media Smoking Application</string>
+    <string name="input_placeholder">Write a message</string>
 </resources>
