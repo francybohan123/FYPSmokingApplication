@@ -7,18 +7,16 @@ import android.os.Bundle;
 
 import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
+import com.learn2crack.healthTrackerSection.healthTrackerPage;
+import com.learn2crack.tipsAndMotivationsSection.tipsAndMotivationsPage;
 import com.learn2crack.utils.Constants;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import rx.subscriptions.CompositeSubscription;
-
-import static com.learn2crack.R.id.mBtLogout;
 
 public class mainMenuPage extends AppCompatActivity {
 
@@ -43,11 +41,12 @@ public class mainMenuPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Main Menu");
         setContentView(R.layout.activity_main_menu_page);
         mSubscriptions = new CompositeSubscription();
         textMediumLogIn = (TextView) findViewById(R.id.textMediumLogIn);
         textLargeLogoLQB = (TextView) findViewById(R.id.textLargeLogoLQB);
-        //value = Typeface.createFromAsset(getAssets(), "assets/fonts/MTCORSVA.ttf");
+        value = Typeface.createFromAsset(getAssets(),"MTCORSVA.ttf");
         textMediumLogIn.setTypeface(value);
         textLargeLogoLQB.setTypeface(value);
         initSharedPreferences();
@@ -108,19 +107,19 @@ public class mainMenuPage extends AppCompatActivity {
 
     private void healthTracker(){
 
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, ProfileActivity.class);
+        Intent profileButtonIntent = new Intent(mainMenuPage.this, healthTrackerPage.class);
         startActivity(profileButtonIntent);
     }
 
     private void tipsAndMotivations(){
 
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, ProfileActivity.class);
+        Intent profileButtonIntent = new Intent(mainMenuPage.this, tipsAndMotivationsPage.class);
         startActivity(profileButtonIntent);
     }
 
     private void settings(){
 
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, ProfileActivity.class);
+        Intent profileButtonIntent = new Intent(mainMenuPage.this, settingsPage.class);
         startActivity(profileButtonIntent);
     }
 

@@ -33,7 +33,6 @@
             android:name=".ProfileActivity"
             android:theme="@style/AppTheme.Profile" />
         <activity android:name=".socialmediaapp.mainMenuPage" />
-        <activity android:name=".socialmediaapp.signUpRequirementsPage" />
         <activity android:name=".MainActivity" />
         <activity android:name=".socialmediaapp.wouldYouLikeToLogOutPage" />
         <activity android:name=".socialmediaapp.moneySavedPage" />
@@ -41,6 +40,21 @@
         <activity android:name=".socialmediaapp.cigarettesPassedPage" />
         <activity android:name=".socialmediaapp.welcomeClass" />
         <activity android:name=".chat.chatRoom" />
+        <activity android:name=".socialmediaapp.settingsPage" />
+        <activity android:name=".tipsAndMotivationsSection.tipsAndMotivationsPage" />
+        <activity android:name=".healthTrackerSection.healthTrackerPage" />
+        <activity android:name=".healthTrackerSection.twentyMinutes" />
+        <activity android:name=".healthTrackerSection.twoHours" />
+        <activity android:name=".healthTrackerSection.twelveHours" />
+        <activity android:name=".healthTrackerSection.twentyFourHours" />
+        <activity android:name=".healthTrackerSection.fortyEightHours" />
+        <activity android:name=".healthTrackerSection.seventyTwoHours" />
+        <activity android:name=".healthTrackerSection.twoToThreeWeeks" />
+        <activity android:name=".healthTrackerSection.oneToNineMonths" />
+        <activity android:name=".healthTrackerSection.oneYear" />
+        <activity android:name=".healthTrackerSection.fiveYears" />
+        <activity android:name=".healthTrackerSection.tenYears" />
+        <activity android:name=".healthTrackerSection.fifteenYears"></activity>
     </application>
 
 </manifest>

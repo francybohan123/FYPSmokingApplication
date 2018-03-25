@@ -28,6 +28,7 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Logging Out?");
         mSubscriptions = new CompositeSubscription();
         setContentView(R.layout.activity_would_you_like_to_log_out_page);
         mSubscriptions = new CompositeSubscription();

@@ -31,6 +31,7 @@ public class chatRoom extends AppCompatActivity implements RoomListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Chat Room");
         setContentView(R.layout.activity_chat_room);
 
         editText = (EditText) findViewById(R.id.editText);

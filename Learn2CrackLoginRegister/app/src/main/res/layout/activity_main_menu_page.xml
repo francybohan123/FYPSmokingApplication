@@ -37,7 +37,10 @@
             android:id="@+id/mBtprofile"
             android:src="@drawable/profilesymbol"
             android:layout_below="@+id/textMediumLogIn"
-            android:layout_toStartOf="@+id/mBtDaysSinceQuitting" />
+            android:layout_toStartOf="@+id/mBtDaysSinceQuitting"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -45,7 +48,11 @@
             android:id="@+id/mBtMoneySaved"
             android:layout_alignBottom="@+id/mBtprofile"
             android:layout_toEndOf="@+id/mBtprofile"
-            android:src="@drawable/money" />
+            android:src="@drawable/money"
+            android:adjustViewBounds="true"
+            android:layout_gravity="right"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -53,7 +60,10 @@
             android:id="@+id/mBtCigarettesPassed"
             android:layout_below="@+id/mBtprofile"
             android:layout_alignParentStart="true"
-            android:src="@drawable/cigarettesymbol" />
+            android:src="@drawable/cigarettesymbol"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -61,7 +71,11 @@
             android:id="@+id/mBtDaysSinceQuitting"
             android:layout_alignBottom="@+id/mBtCigarettesPassed"
             android:layout_toEndOf="@+id/mBtCigarettesPassed"
-            android:src="@drawable/calendersymbol" />
+            android:src="@drawable/calendersymbol"
+            android:layout_gravity="right"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -69,7 +83,10 @@
             android:id="@+id/mBtHealthTracker"
             android:layout_below="@+id/mBtCigarettesPassed"
             android:layout_alignParentStart="true"
-            android:src="@drawable/healthsymbol" />
+            android:src="@drawable/healthsymbol"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -77,7 +94,11 @@
             android:id="@+id/mBtTipsAndMotivations"
             android:layout_alignBottom="@+id/mBtHealthTracker"
             android:layout_toEndOf="@+id/mBtHealthTracker"
-            android:src="@drawable/tipssymbol" />
+            android:src="@drawable/tipssymbol"
+            android:layout_gravity="right"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -85,7 +106,10 @@
             android:id="@+id/mBtSettings"
             android:layout_below="@+id/mBtHealthTracker"
             android:layout_alignParentStart="true"
-            android:src="@drawable/settingsicon" />
+            android:src="@drawable/settingsicon"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
 
         <ImageButton
             android:layout_width="140dp"
@@ -93,6 +117,10 @@
             android:id="@+id/mBtLogout"
             android:layout_alignBottom="@+id/mBtSettings"
             android:layout_toEndOf="@+id/mBtSettings"
-            android:src="@drawable/logoutsymbol" />
+            android:src="@drawable/logoutsymbol"
+            android:layout_gravity="right"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
     </RelativeLayout>
 </ScrollView>

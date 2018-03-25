@@ -18,6 +18,7 @@ public class cigarettesPassedPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Cigarettes Passed");
         setContentView(R.layout.activity_cigarettes_passed_page);
 
 /*        int numberSmokedPerDay = 15;

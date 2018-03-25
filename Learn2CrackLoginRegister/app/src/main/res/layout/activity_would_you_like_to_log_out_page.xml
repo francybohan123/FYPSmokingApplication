@@ -23,6 +23,8 @@
         android:text="No"
         android:id="@+id/mBtDontLogout"
         android:layout_centerVertical="true"
+        android:textColor="#000000"
+        android:background="@drawable/my_button_bg"
         android:layout_alignEnd="@+id/textView63" />
 
     <Button
@@ -31,6 +33,8 @@
         android:text="Yes"
         android:id="@+id/mBtLogout"
         android:layout_alignBaseline="@+id/mBtDontLogout"
+        android:textColor="#000000"
+        android:background="@drawable/my_button_bg"
         android:layout_alignBottom="@+id/mBtDontLogout"
         android:layout_alignStart="@+id/textView63" />
 </RelativeLayout>

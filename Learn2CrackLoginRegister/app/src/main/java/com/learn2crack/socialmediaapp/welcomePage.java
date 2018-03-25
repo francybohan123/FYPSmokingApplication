@@ -12,16 +12,19 @@ import com.learn2crack.MainActivity;
 import com.learn2crack.R;
 
 public class welcomePage extends AppCompatActivity {
-    TextView textLQB, textLittleQuitBuddy;
+    TextView textLQB, textLittleQuitBuddy, tvSmallWriting;
     Typeface tfc1;
     Button continueButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Welcome to Little Quit Buddy");
         setContentView(R.layout.activity_welcome_page);
         textLittleQuitBuddy = (TextView) findViewById(R.id.textLittleQuitBuddy);
         textLQB = (TextView) findViewById(R.id.textLQB);
-        //tfc1 = Typeface.createFromAsset(getAssets(),"fonts/MTCORSVA.ttf");
+        tvSmallWriting = (TextView) findViewById(R.id.tvSmallWriting);
+        tfc1 = Typeface.createFromAsset(getAssets(),"MTCORSVA.ttf");
+        tvSmallWriting.setTypeface(tfc1);
         textLQB.setTypeface(tfc1);
         textLittleQuitBuddy.setTypeface(tfc1);
 

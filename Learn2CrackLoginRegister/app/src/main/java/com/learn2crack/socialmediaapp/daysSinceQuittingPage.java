@@ -17,6 +17,7 @@ public class daysSinceQuittingPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Days Since Quitting");
         setContentView(R.layout.activity_days_since_quitting_page);
 
         textviewDaysSinceQuitting = (TextView) findViewById(R.id.tv_dayssincequitting);

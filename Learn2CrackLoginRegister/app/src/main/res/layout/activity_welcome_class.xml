@@ -11,10 +11,35 @@
     tools:context="com.learn2crack.socialmediaapp.welcomeClass">
 
     <Button
-        android:text="Button"
+        android:text="Main Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:background="@drawable/my_button_bg"
+        android:id="@+id/mBtMainMenu"
+        android:layout_above="@+id/mBtwelcomeButton"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Welcome to Little Quit Buddy. The application that helps you with your fight again smoking. Please select one of the options below to continue."
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/mBtwelcomeButton" />
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:id="@+id/tv_welcomeNote"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Profile Page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mBtwelcomeButton"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:background="@drawable/my_button_bg"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

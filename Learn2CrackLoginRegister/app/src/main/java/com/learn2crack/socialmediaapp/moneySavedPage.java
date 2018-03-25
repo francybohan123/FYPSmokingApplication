@@ -18,6 +18,7 @@ public class moneySavedPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Money Saved");
         setContentView(R.layout.activity_money_saved_page);
 
         double pricePerPacket = 12.50;

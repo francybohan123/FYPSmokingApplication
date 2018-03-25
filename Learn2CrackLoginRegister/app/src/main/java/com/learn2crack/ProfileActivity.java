@@ -51,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Profile");
         setContentView(R.layout.activity_profile);
         mSubscriptions = new CompositeSubscription();
         initViews();

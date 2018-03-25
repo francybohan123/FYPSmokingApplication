@@ -44,6 +44,7 @@ public class LoginFragment extends Fragment {
     private EditText mEtEmail;
     private EditText mEtPassword;
     private Button mBtLogin;
+    private TextView tvLQBlogo;
     private TextView mTvRegister;
     private TextView mTvForgotPassword;
     private TextInputLayout mTiEmail;
@@ -57,6 +58,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login,container,false);
         mSubscriptions = new CompositeSubscription();
+        getActivity().setTitle("Log In");
         initViews(view);
         initSharedPreferences();
         return view;
@@ -71,10 +73,8 @@ public class LoginFragment extends Fragment {
         mTiPassword = (TextInputLayout) v.findViewById(R.id.ti_password);
         mProgressBar = (ProgressBar) v.findViewById(R.id.progress);
         mTvRegister = (TextView) v.findViewById(R.id.tv_register);
-        mTvForgotPassword = (TextView) v.findViewById(R.id.tv_forgot_password);
         mBtLogin.setOnClickListener(view -> login());
         mTvRegister.setOnClickListener(view -> goToRegister());
-        mTvForgotPassword.setOnClickListener(view -> showDialog());
     }
 
     private void initSharedPreferences() {

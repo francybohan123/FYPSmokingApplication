@@ -68,7 +68,7 @@ public class RegisterFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        getActivity().setTitle("Sign Up");
         View view = inflater.inflate(R.layout.fragment_register,container,false);
         mSubscriptions = new CompositeSubscription();
         initViews(view);
