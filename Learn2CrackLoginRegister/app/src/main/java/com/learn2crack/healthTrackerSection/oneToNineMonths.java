@@ -13,4 +13,9 @@ public class oneToNineMonths extends AppCompatActivity {
         setTitle("1-9 Months");
         setContentView(R.layout.activity_one_to_nine_months);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

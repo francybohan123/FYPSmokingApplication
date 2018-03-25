@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text=" LQB "
+            android:textColor="#000000"
             android:textSize="80dp"
             android:id="@+id/textLargeLogoLQB"
             android:layout_alignParentTop="true"
@@ -27,6 +28,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=" Main Menu "
             android:textSize="30dp"
+            android:textColor="#000000"
             android:id="@+id/textMediumLogIn"
             android:layout_below="@+id/textLargeLogoLQB"
             android:layout_centerHorizontal="true" />

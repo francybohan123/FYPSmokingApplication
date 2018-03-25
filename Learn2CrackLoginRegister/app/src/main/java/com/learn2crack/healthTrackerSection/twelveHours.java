@@ -13,4 +13,9 @@ public class twelveHours extends AppCompatActivity {
         setTitle("After 12 Hours");
         setContentView(R.layout.activity_twelve_hours);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

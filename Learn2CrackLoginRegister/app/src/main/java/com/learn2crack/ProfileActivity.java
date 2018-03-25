@@ -19,6 +19,7 @@ import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
 import com.learn2crack.socialmediaapp.mainMenuPage;
 import com.learn2crack.socialmediaapp.welcomePage;
+import com.learn2crack.socialmediaapp.wouldYouLikeToLogOutPage;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
 import retrofit2.adapter.rxjava.HttpException;
@@ -71,12 +72,10 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);*/
         mBtMainMenu = (Button) findViewById(R.id.mBtMainMenu);
         mBtchatRoom = (Button) findViewById(R.id.mBtchatRoom);
-        mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
         mProgressbar = (ProgressBar) findViewById(R.id.progress);
         mBtMainMenu.setOnClickListener(view -> mainMenu());
         mBtchatRoom.setOnClickListener(view -> chatRoom());
-        mBtChangePassword.setOnClickListener(view -> showDialog());
         mBtLogout.setOnClickListener(view -> logout());
     }
 
@@ -173,15 +172,20 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mSubscriptions.unsubscribe();
+    public void onPasswordChanged() {
+        showSnackBarMessage("Password Changed Successfully!");
     }
 
     @Override
-    public void onPasswordChanged() {
+    public void onBackPressed(){
+        Intent logoutIntent = new Intent(ProfileActivity.this, wouldYouLikeToLogOutPage.class);
+        startActivity(logoutIntent);
+    }
 
-        showSnackBarMessage("Password Changed Successfully!");
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSubscriptions.unsubscribe();
     }
 }
 

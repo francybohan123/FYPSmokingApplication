@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Little Quit Buddy</string>
-    <string name="title_activity_tip_one_page">tipOnePage</string>
-    <string name="title_activity_tip_two_page">tipTwoPage</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="action_settings">Settings</string>
-</resources>

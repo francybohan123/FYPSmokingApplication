@@ -57,4 +57,8 @@ public class tipsAndMotivationsPage extends AppCompatActivity {
         next();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

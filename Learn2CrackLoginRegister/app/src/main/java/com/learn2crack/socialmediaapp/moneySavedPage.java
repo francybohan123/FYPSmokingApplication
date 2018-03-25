@@ -53,4 +53,9 @@ public class moneySavedPage extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

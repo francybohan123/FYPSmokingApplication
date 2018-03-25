@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25dp"
+        android:textColor="#000000"
         android:id="@+id/textviewCigarettesPassed"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -24,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
+        android:textColor="#000000"
         android:id="@+id/textView4"
         android:layout_marginBottom="68dp"
         android:layout_above="@+id/textviewCigarettesPassed"

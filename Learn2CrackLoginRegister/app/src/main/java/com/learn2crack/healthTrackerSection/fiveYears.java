@@ -13,4 +13,9 @@ public class fiveYears extends AppCompatActivity {
         setTitle("5 Years");
         setContentView(R.layout.activity_five_years);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

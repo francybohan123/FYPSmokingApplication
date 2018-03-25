@@ -13,4 +13,9 @@ public class twentyMinutes extends AppCompatActivity {
         setTitle("After 20 Minutes");
         setContentView(R.layout.activity_twenty_minutes);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

@@ -13,4 +13,9 @@ public class seventyTwoHours extends AppCompatActivity {
         setTitle("After 72 Hours");
         setContentView(R.layout.activity_seventy_two_hours);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

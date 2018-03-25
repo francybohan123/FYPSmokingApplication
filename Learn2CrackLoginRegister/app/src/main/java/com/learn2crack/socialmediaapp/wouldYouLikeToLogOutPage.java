@@ -23,7 +23,8 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
     private Button logoutButton;
     private Button noDontLogoutButton;
     private CompositeSubscription mSubscriptions;
-
+    TextView tv_logoutQuestion;
+    Typeface tfc1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,9 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
         mSubscriptions = new CompositeSubscription();
         setContentView(R.layout.activity_would_you_like_to_log_out_page);
         mSubscriptions = new CompositeSubscription();
+        tv_logoutQuestion = (TextView) findViewById(R.id.tv_logoutQuestion);
+        tfc1 = Typeface.createFromAsset(getAssets(),"MTCORSVA.ttf");
+        tv_logoutQuestion.setTypeface(tfc1);
         initSharedPreferences();
         initViews();
     }
@@ -67,6 +71,12 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
         Intent profileButtonIntent = new Intent(wouldYouLikeToLogOutPage.this, welcomePage.class);
         startActivity(profileButtonIntent);
         finish();
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent logoutIntent = new Intent(wouldYouLikeToLogOutPage.this, wouldYouLikeToLogOutPage.class);
+        startActivity(logoutIntent);
     }
 
     @Override
