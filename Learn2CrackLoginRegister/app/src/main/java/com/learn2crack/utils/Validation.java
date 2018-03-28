@@ -47,6 +47,18 @@ public class Validation {
         }
     }
 
+    public static boolean validateEmptyDateOfBirth(String dateOfBirth) {
+
+        if (TextUtils.isEmpty(dateOfBirth)) {
+
+            return false;
+
+        } else {
+
+            return true;
+        }
+    }
+
     public static boolean validateDateOfQuittingSmoking(String dateOfQuittingSmoking) {
 
         String validateDate = "((19|20)\\d\\d)/(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])";
@@ -57,6 +69,18 @@ public class Validation {
             return false;
 
         }else {
+
+            return true;
+        }
+    }
+
+    public static boolean validateEmptyDateOfQuittingSmoking(String dateOfQuittingSmoking) {
+
+        if (TextUtils.isEmpty(dateOfQuittingSmoking)) {
+
+            return false;
+
+        } else {
 
             return true;
         }
@@ -74,9 +98,9 @@ public class Validation {
         }
     }
 
-    public static boolean validateNumberPerPacket(String numberPerPacket){
+    public static boolean validatePricePerPacket(String pricePerPacket){
 
-        if (TextUtils.isEmpty(numberPerPacket)) {
+        if (TextUtils.isEmpty(pricePerPacket)) {
 
             return false;
 
@@ -86,9 +110,9 @@ public class Validation {
         }
     }
 
-    public static boolean validatePricePerPacket(String pricePerPacket){
+    public static boolean validateNumberPerPacket(String numberPerPacket){
 
-        if (TextUtils.isEmpty(pricePerPacket)) {
+        if (TextUtils.isEmpty(numberPerPacket)) {
 
             return false;
 

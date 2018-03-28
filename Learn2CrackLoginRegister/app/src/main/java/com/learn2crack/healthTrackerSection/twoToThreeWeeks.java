@@ -13,9 +13,4 @@ public class twoToThreeWeeks extends AppCompatActivity {
         setTitle("After 2-3 Weeks");
         setContentView(R.layout.activity_two_to_three_weeks);
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }

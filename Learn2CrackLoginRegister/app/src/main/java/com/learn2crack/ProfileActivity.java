@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.textclassifier.TextClassification;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,7 +20,6 @@ import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
 import com.learn2crack.socialmediaapp.mainMenuPage;
 import com.learn2crack.socialmediaapp.welcomePage;
-import com.learn2crack.socialmediaapp.wouldYouLikeToLogOutPage;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
 import retrofit2.adapter.rxjava.HttpException;
@@ -37,8 +37,8 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private TextView mTvDateOfBirth;
     private TextView mTvDateOfQuittingSmoking;
     private TextView mTvNumberSmokedPerDay;
-    private TextView mTvNumberPerPacket;
     private TextView mTvPricePerPacket;
+    private TextView mTvNumberPerPacket;
     private Button mBtMainMenu;
     private Button mBtchatRoom;
     private Button mBtChangePassword;
@@ -65,17 +65,19 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvName = (TextView) findViewById(R.id.tv_name);
         mTvEmail = (TextView) findViewById(R.id.tv_email);
         mTvDate = (TextView) findViewById(R.id.tv_date);
-        /*mTvDateOfBirth = (TextView) findViewById(R.id.tv_dateofbirth);
+        mTvDateOfBirth = (TextView) findViewById(R.id.tv_dateofbirth);
         mTvDateOfQuittingSmoking = (TextView) findViewById(R.id.tv_dateofquittingsmoking);
         mTvNumberSmokedPerDay = (TextView) findViewById(R.id.tv_numbersmokedperday);
+        mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);
         mTvNumberPerPacket = (TextView) findViewById(R.id.tv_numberperpacket);
-        mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);*/
         mBtMainMenu = (Button) findViewById(R.id.mBtMainMenu);
         mBtchatRoom = (Button) findViewById(R.id.mBtchatRoom);
+        mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
         mProgressbar = (ProgressBar) findViewById(R.id.progress);
         mBtMainMenu.setOnClickListener(view -> mainMenu());
         mBtchatRoom.setOnClickListener(view -> chatRoom());
+        mBtChangePassword.setOnClickListener(view -> showDialog());
         mBtLogout.setOnClickListener(view -> logout());
     }
 
@@ -135,11 +137,11 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvName.setText(user.getName());
         mTvEmail.setText(user.getEmail());
         mTvDate.setText(user.getCreated_at());
-/*        mTvDateOfBirth.setText(user.getDateOfBirth());
+        mTvDateOfBirth.setText(user.getDateOfBirth());
         mTvDateOfQuittingSmoking.setText(user.getDateOfQuittingSmoking());
         mTvNumberSmokedPerDay.setText(user.getNumberSmokedPerDay());
+        mTvPricePerPacket.setText(user.getPricePerPacket());
         mTvNumberPerPacket.setText(user.getNumberPerPacket());
-        mTvPricePerPacket.setText(user.getPricePerPacket());*/
     }
 
     private void handleError(Throwable error) {
@@ -172,20 +174,15 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     }
 
     @Override
-    public void onPasswordChanged() {
-        showSnackBarMessage("Password Changed Successfully!");
-    }
-
-    @Override
-    public void onBackPressed(){
-        Intent logoutIntent = new Intent(ProfileActivity.this, wouldYouLikeToLogOutPage.class);
-        startActivity(logoutIntent);
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         mSubscriptions.unsubscribe();
+    }
+
+    @Override
+    public void onPasswordChanged() {
+
+        showSnackBarMessage("Password Changed Successfully!");
     }
 }
 

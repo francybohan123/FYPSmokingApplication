@@ -11,7 +11,7 @@ const config = require('./config/config.json');
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.end('Welcome to Learn2Crack !'));
+	router.get('/', (req, res) => res.end('Social Media Smoking Application'));
 
 	router.post('/authenticate', (req, res) => {
 
@@ -43,22 +43,28 @@ module.exports = router => {
 		const email = req.body.email;
 		const password = req.body.password;
 		const dateOfBirth = req.body.dateOfBirth;
+		const dateOfQuittingSmoking = req.body.dateOfQuittingSmoking;
+		const numberSmokedPerDay = req.body.numberSmokedPerDay;
+		const pricePerPacket = req.body.pricePerPacket;
+		const numberPerPacket = req.body.numberPerPacket;
 
-		if (!name || !email || !password || !dateOfBirth || !name.trim() || !email.trim() || !password.trim() || !dateOfBirth.trim()) {
+		if (!name || !email || !password || !dateOfBirth || !dateOfQuittingSmoking || !numberSmokedPerDay || !pricePerPacket || !numberPerPacket || !name.trim() || !email.trim() || !password.trim() || !dateOfBirth.trim() || !dateOfQuittingSmoking.trim() || !numberSmokedPerDay.trim() || !pricePerPacket.trim() || !numberPerPacket.trim()) {
 
 			res.status(400).json({message: 'Invalid Request !'});
 
 		} else {
 
-			register.registerUser(name, email, password, dateOfBirth)
+			register.registerUser(name, email, password, dateOfBirth, dateOfQuittingSmoking, numberSmokedPerDay, pricePerPacket, numberPerPacket)
 
 			.then(result => {
 
 				res.setHeader('Location', '/users'+ email);
 				res.status(result.status).json({ message: result.message })
 			})
+			
 
-			.catch(err => res.status(err.status).json({ message: err.message }));
+			.catch(err => res.status(err.status).json({ message: err.message }))
+			  
 		}
 	});
 

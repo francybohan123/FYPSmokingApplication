@@ -13,9 +13,4 @@ public class fortyEightHours extends AppCompatActivity {
         setTitle("After 48 Hours");
         setContentView(R.layout.activity_forty_eight_hours);
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }

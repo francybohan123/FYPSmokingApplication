@@ -37,9 +37,4 @@ public class daysSinceQuittingPage extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }

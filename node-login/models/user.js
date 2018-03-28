@@ -9,6 +9,11 @@ const userSchema = mongoose.Schema({
 	name 			: String,
 	email			: String, 
 	hashed_password	: String,
+	dateOfBirth		: String,
+	dateOfQuittingSmoking: String,
+	numberSmokedPerDay: String,
+	pricePerPacket 	: String,
+	numberPerPacket	: String,
 	created_at		: String,
 	temp_password	: String,
 	temp_password_time: String

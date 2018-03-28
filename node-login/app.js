@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(logger('dev'));
 //app.use(express.static('../client'));
 require('./routes')(router);
-app.use('/api/v1', router); //change this if starting again
+app.use('/api/v1/', router); //change this if starting again
 
 app.listen(port);
 

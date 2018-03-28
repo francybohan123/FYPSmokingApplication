@@ -26,25 +26,15 @@ public class User {
         this.password = password;
     }
 
-/*    public void setDateOfBirth(String dateOfBirth) {this.dateOfBirth = dateOfBirth; }
+    public void setDateOfBirth(String dateOfBirth) {this.dateOfBirth = dateOfBirth; }
 
     public void setDateOfQuittingSmoking(String dateOfQuittingSmoking) {this.dateOfQuittingSmoking = dateOfQuittingSmoking; }
 
     public void setNumberSmokedPerDay(String numberSmokedPerDay) {this.numberSmokedPerDay = numberSmokedPerDay; }
 
+    public void setPricePerPacket(String pricePerPacket) {this.pricePerPacket = pricePerPacket; }
+
     public void setNumberPerPacket(String numberPerPacket) {this.numberPerPacket = numberPerPacket; }
-
-    public void setPricePerPacket(String pricePerPacket) {this.pricePerPacket = pricePerPacket; }*/
-
-/*    public String getDateOfBirth() { return dateOfBirth; }
-
-    public String getDateOfQuittingSmoking() {return dateOfQuittingSmoking; }
-
-    public String getNumberSmokedPerDay() {return numberSmokedPerDay; }
-
-    public String getNumberPerPacket() {return numberPerPacket; }
-
-    public String getPricePerPacket() {return pricePerPacket; }*/
 
     public String getName() {
         return name;
@@ -53,6 +43,16 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    public String getDateOfBirth() { return dateOfBirth; }
+
+    public String getDateOfQuittingSmoking() { return  dateOfQuittingSmoking; }
+
+    public String getNumberSmokedPerDay() {return numberSmokedPerDay; }
+
+    public String getPricePerPacket() {return  pricePerPacket; }
+
+    public String getNumberPerPacket() {return numberPerPacket; }
 
     public String getCreated_at() {
         return created_at;
