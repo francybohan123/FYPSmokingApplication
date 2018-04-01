@@ -92,7 +92,7 @@
                     android:ems="10"
                     android:id="@+id/et_dateofbirth"
                     android:layout_weight="1"
-                    android:hint="Date Of Birth (yyyy/mm/dd)" />
+                    android:hint="Date Of Birth (dd/mm/yyyy)" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout

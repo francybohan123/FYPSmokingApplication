@@ -125,13 +125,8 @@ public class mainMenuPage extends AppCompatActivity {
 
     public void logout() {
 
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.putString(Constants.EMAIL,"");
-        editor.putString(Constants.TOKEN,"");
-        editor.apply();
-        Intent profileButtonIntent = new Intent(mainMenuPage.this, welcomePage.class);
-        startActivity(profileButtonIntent);
-        finish();
+        Intent logoutIntent = new Intent(mainMenuPage.this, wouldYouLikeToLogOutPage.class);
+        startActivity(logoutIntent);
     }
 
     @Override

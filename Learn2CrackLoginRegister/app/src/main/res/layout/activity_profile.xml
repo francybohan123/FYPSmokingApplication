@@ -13,108 +13,153 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/mBtMainMenu"
         android:layout_alignParentStart="true">
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="55dp"
-                android:id="@+id/tv_name" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_email"
-                android:layout_below="@+id/tv_name"
-                android:layout_alignStart="@+id/tv_name" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_date"
-                android:layout_below="@+id/tv_email"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_dateofbirth"
-                android:layout_below="@+id/tv_date"
-                android:layout_alignStart="@+id/tv_date" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_dateofbirth"
-                android:layout_alignStart="@+id/tv_dateofbirth"
-                android:id="@+id/tv_dateofquittingsmoking" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_dateofquittingsmoking"
-                android:layout_alignStart="@+id/tv_dateofquittingsmoking"
-                android:id="@+id/tv_numbersmokedperday" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_numbersmokedperday"
-                android:layout_alignStart="@+id/tv_numbersmokedperday"
-                android:id="@+id/tv_numberperpacket" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_numberperpacket"
-                android:layout_alignStart="@+id/tv_numberperpacket"
-                android:id="@+id/tv_priceperpacket" />
-
-            <ProgressBar
-                android:id="@+id/progress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/button_margin" />
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true">
-
-            </android.support.v7.widget.CardView>
-
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_logout"
+    <TextView
+        android:text="Username: "
+        android:textSize="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/ic_exit"
-        android:paddingLeft="@dimen/button_padding"
-        android:text="Logout"
+        android:textColor="#fff"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_dateofbirth"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_dateofquittingsmoking"
+        android:textSize="15sp"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Date of Quitting: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_above="@+id/progress"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Email Address: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Age: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_date"
+        android:textSize="15sp"
+        android:layout_below="@+id/tv_email"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="39dp" />
+
+    <TextView
+        android:text="Sign Up Date: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_alignBaseline="@+id/tv_date"
+        android:layout_alignBottom="@+id/tv_date"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_dateofbirth"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@+id/textView12"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_email"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Chat Room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mBtchatRoom"
         android:textColor="#000000"
         android:gravity="center"
         android:background="@drawable/my_button_bg"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Main Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mBtMainMenu"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:background="@drawable/my_button_bg"
+        android:layout_above="@+id/mBtchatRoom"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="47dp" />
 
     <Button
         android:id="@+id/btn_change_password"
@@ -126,29 +171,7 @@
         android:textColor="#000000"
         android:gravity="center"
         android:background="@drawable/my_button_bg"
-        android:layout_above="@+id/btn_logout"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="Main Menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mBtMainMenu"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:background="@drawable/my_button_bg"
-        android:layout_above="@+id/btn_change_password"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="Chat Room"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mBtchatRoom"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:background="@drawable/my_button_bg"
-        android:layout_above="@+id/mBtMainMenu"
+        android:layout_above="@+id/mBtchatRoom"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

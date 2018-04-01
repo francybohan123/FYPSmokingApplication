@@ -28,4 +28,12 @@
         android:layout_marginBottom="68dp"
         android:layout_above="@+id/textviewCigarettesPassed"
         android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressSlot" />
 </RelativeLayout>
