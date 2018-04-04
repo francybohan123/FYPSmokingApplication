@@ -21,18 +21,6 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7"
-                android:textAlignment="viewStart"
-                android:textSize="24sp"
-                android:layout_marginTop="18dp"
-                android:layout_below="@+id/textView9"
-                android:layout_alignParentStart="true"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Within two hours of not smoking, your heart rate and blood pressure will have returned to almost completely normal levels. Your peripheral circulation may also begin to improve during this time. This means you may begin to feel warmth in your fingertips and other extremities. This is due to your circulation improving. However, during this time you may also begin to experience some of the adverse effects of quitting smoking: withdrawal symptoms. These symptoms may include anxiety, increased appetite, irritability, sleeplessness, and intense cravings. " />
-
-            <TextView
                 android:text="After just 2 hours without cigarettes:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,6 +31,18 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="normal|bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:textAlignment="viewStart"
+                android:textSize="24sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Within two hours of not smoking, your heart rate and blood pressure will have returned to almost completely normal levels. Your peripheral circulation may also begin to improve during this time. This means you may begin to feel warmth in your fingertips and other extremities. This is due to your circulation improving. However, during this time you may also begin to experience some of the adverse effects of quitting smoking: withdrawal symptoms. These symptoms may include anxiety, increased appetite, irritability, sleeplessness, and intense cravings. "
+                android:layout_marginTop="23dp"
+                android:layout_below="@+id/textView9"
+                android:layout_alignParentStart="true" />
 
         </RelativeLayout>
     </ScrollView>

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.learn2crack.R;
@@ -17,12 +19,10 @@ import com.learn2crack.network.NetworkUtil;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -40,6 +40,7 @@ public class cigarettesPassedPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Cigarettes Passed");
+        Toast.makeText(cigarettesPassedPage.this, "Look at all those cigarettes you've passed!", Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_cigarettes_passed_page);
         mSubscriptions = new CompositeSubscription();
         initViews();

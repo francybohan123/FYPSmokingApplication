@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.learn2crack.R;
+import com.learn2crack.healthTrackerSection.healthTrackerPage;
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
@@ -43,6 +46,7 @@ public class moneySavedPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Money Saved");
+        Toast.makeText(moneySavedPage.this, "Think of what you can do with all this money!", Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_money_saved_page);
         mSubscriptions = new CompositeSubscription();
         initViews();
@@ -107,7 +111,7 @@ public class moneySavedPage extends AppCompatActivity {
             String decimalPlaceConverter = df.format(totalPrice);
 
             String totalAccumulatedSmokingPrice = String.valueOf(decimalPlaceConverter);
-            textviewMoneySaved.setText(totalAccumulatedSmokingPrice);
+            textviewMoneySaved.setText("\u20ac" + totalAccumulatedSmokingPrice);
         } catch (ParseException e) {
             e.printStackTrace();
         }

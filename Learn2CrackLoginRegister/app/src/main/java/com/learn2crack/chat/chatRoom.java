@@ -20,7 +20,6 @@ import java.util.Random;
 
 public class chatRoom extends AppCompatActivity implements RoomListener {
 
-    // replace this with a real channelID from Scaledrone dashboard
     private String channelID = "wBou7IcxMg71COgB";
     private String roomName = "observable-room";
     private EditText editText;
@@ -35,7 +34,6 @@ public class chatRoom extends AppCompatActivity implements RoomListener {
         setContentView(R.layout.activity_chat_room);
 
         editText = (EditText) findViewById(R.id.editText);
-
         messageAdapter = new MessageAdapter(this);
         messagesView = (ListView) findViewById(R.id.messages_view);
         messagesView.setAdapter(messageAdapter);

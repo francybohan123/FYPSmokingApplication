@@ -24,126 +24,13 @@
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:text="Username: "
-        android:textSize="15sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <ProgressBar
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progress"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="TextView"
-        android:textSize="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:id="@+id/tv_name"
-        android:layout_alignStart="@+id/tv_dateofbirth"
-        android:layout_alignParentTop="true" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_dateofquittingsmoking"
-        android:textSize="15sp"
-        android:layout_alignBottom="@+id/textView14"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Date of Quitting: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView14"
-        android:textSize="15sp"
-        android:textColor="#fff"
-        android:layout_above="@+id/progress"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Email Address: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:textSize="15sp"
-        android:textColor="#fff"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Age: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView12"
-        android:textSize="15sp"
-        android:textColor="#fff"
-        android:layout_below="@+id/textView10"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_date"
-        android:textSize="15sp"
-        android:layout_below="@+id/tv_email"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="39dp" />
-
-    <TextView
-        android:text="Sign Up Date: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView10"
-        android:textSize="15sp"
-        android:textColor="#fff"
-        android:layout_alignBaseline="@+id/tv_date"
-        android:layout_alignBottom="@+id/tv_date"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_dateofbirth"
-        android:textSize="15sp"
-        android:layout_alignBaseline="@+id/textView12"
-        android:layout_alignBottom="@+id/textView12"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_email"
-        android:textSize="15sp"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignParentEnd="true" />
-
     <Button
         android:text="Chat Room"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mBtchatRoom"
         android:textColor="#000000"
+        android:textSize="18sp"
         android:gravity="center"
         android:background="@drawable/my_button_bg"
         android:layout_alignParentBottom="true"
@@ -155,6 +42,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/mBtMainMenu"
         android:textColor="#000000"
+        android:textSize="18sp"
         android:gravity="center"
         android:background="@drawable/my_button_bg"
         android:layout_above="@+id/mBtchatRoom"
@@ -169,9 +57,127 @@
         android:paddingLeft="@dimen/button_padding"
         android:text="Change Password"
         android:textColor="#000000"
+        android:textSize="18sp"
         android:gravity="center"
         android:background="@drawable/my_button_bg"
         android:layout_above="@+id/mBtchatRoom"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Username: "
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeStepGranularity="2sp" />
+
+    <TextView
+        android:text="TextView"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/tv_name"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_email"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Date of Birth:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_below="@+id/tv_email"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_dateofquittingsmoking"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Sign Up Date: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_below="@+id/tv_dateofquittingsmoking"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progress" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_dateofbirth"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Date of Quitting: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_below="@+id/tv_dateofbirth"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_date"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Email Address: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_below="@+id/tv_name"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -44,11 +44,11 @@ public class mainMenuPage extends AppCompatActivity {
         setTitle("Main Menu");
         setContentView(R.layout.activity_main_menu_page);
         mSubscriptions = new CompositeSubscription();
-        textMediumLogIn = (TextView) findViewById(R.id.textMediumLogIn);
+/*        textMediumLogIn = (TextView) findViewById(R.id.textMediumLogIn);
         textLargeLogoLQB = (TextView) findViewById(R.id.textLargeLogoLQB);
         value = Typeface.createFromAsset(getAssets(),"MTCORSVA.ttf");
         textMediumLogIn.setTypeface(value);
-        textLargeLogoLQB.setTypeface(value);
+        textLargeLogoLQB.setTypeface(value);*/
         initSharedPreferences();
         initViews();
     }

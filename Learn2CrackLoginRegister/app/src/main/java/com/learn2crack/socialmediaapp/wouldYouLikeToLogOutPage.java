@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
+import com.learn2crack.healthTrackerSection.healthTrackerPage;
 import com.learn2crack.utils.Constants;
 import rx.subscriptions.CompositeSubscription;
 
@@ -29,6 +32,7 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Logging Out?");
+        Toast.makeText(wouldYouLikeToLogOutPage.this, "You're leaving us?", Toast.LENGTH_SHORT).show();
         mSubscriptions = new CompositeSubscription();
         setContentView(R.layout.activity_would_you_like_to_log_out_page);
         mSubscriptions = new CompositeSubscription();
@@ -66,6 +70,7 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
         editor.apply();
         Intent profileButtonIntent = new Intent(wouldYouLikeToLogOutPage.this, welcomePage.class);
         startActivity(profileButtonIntent);
+        Toast.makeText(wouldYouLikeToLogOutPage.this, "See you next time!", Toast.LENGTH_LONG).show();
         finish();
     }
 

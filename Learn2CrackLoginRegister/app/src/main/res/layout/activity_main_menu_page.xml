@@ -1,126 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="0sp"
-    tools:context="com.learn2crack.socialmediaapp.mainMenuPage">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2">
 
-    <RelativeLayout
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="720sp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" LQB "
-            android:textSize="80dp"
-            android:id="@+id/textLargeLogoLQB"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text=" Main Menu "
-            android:textSize="30dp"
-            android:id="@+id/textMediumLogIn"
-            android:layout_below="@+id/textLargeLogoLQB"
-            android:layout_centerHorizontal="true" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="horizontal">
 
         <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/mBtprofile"
             android:src="@drawable/profilesymbol"
             android:layout_below="@+id/textMediumLogIn"
             android:layout_toStartOf="@+id/mBtDaysSinceQuitting"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="0dp"
             android:adjustViewBounds="true"
-            android:padding="5dp"
+            android:padding="0dp"
+            android:layout_gravity="left"
             android:scaleType="fitCenter"/>
 
         <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/mBtMoneySaved"
             android:layout_alignBottom="@+id/mBtprofile"
             android:layout_toEndOf="@+id/mBtprofile"
             android:src="@drawable/money"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="0dp"
             android:adjustViewBounds="true"
-            android:layout_gravity="right"
-            android:padding="5dp"
+            android:padding="0dp"
+            android:layout_gravity="left"
             android:scaleType="fitCenter"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
         <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/mBtCigarettesPassed"
             android:layout_below="@+id/mBtprofile"
             android:layout_alignParentStart="true"
             android:src="@drawable/cigarettesymbol"
             android:adjustViewBounds="true"
-            android:padding="5dp"
+            android:padding="0dp"
             android:scaleType="fitCenter"/>
 
         <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/mBtDaysSinceQuitting"
             android:layout_alignBottom="@+id/mBtCigarettesPassed"
             android:layout_toEndOf="@+id/mBtCigarettesPassed"
             android:src="@drawable/calendersymbol"
             android:layout_gravity="right"
             android:adjustViewBounds="true"
-            android:padding="5dp"
+            android:padding="0dp"
             android:scaleType="fitCenter"/>
+    </LinearLayout>
 
-        <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:id="@+id/mBtHealthTracker"
-            android:layout_below="@+id/mBtCigarettesPassed"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/healthsymbol"
-            android:adjustViewBounds="true"
-            android:padding="5dp"
-            android:scaleType="fitCenter"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:id="@+id/mBtTipsAndMotivations"
-            android:layout_alignBottom="@+id/mBtHealthTracker"
-            android:layout_toEndOf="@+id/mBtHealthTracker"
-            android:src="@drawable/tipssymbol"
-            android:layout_gravity="right"
-            android:adjustViewBounds="true"
-            android:padding="5dp"
-            android:scaleType="fitCenter"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/mBtHealthTracker"
+                android:layout_below="@+id/mBtCigarettesPassed"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/healthsymbol"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                android:scaleType="fitCenter"/>
 
-        <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:id="@+id/mBtSettings"
-            android:layout_below="@+id/mBtHealthTracker"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/settingsicon"
-            android:adjustViewBounds="true"
-            android:padding="5dp"
-            android:scaleType="fitCenter"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/mBtTipsAndMotivations"
+                android:layout_alignBottom="@+id/mBtHealthTracker"
+                android:layout_toEndOf="@+id/mBtHealthTracker"
+                android:src="@drawable/tipssymbol"
+                android:layout_gravity="right"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"/>
+        </LinearLayout>
 
-        <ImageButton
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:id="@+id/mBtLogout"
-            android:layout_alignBottom="@+id/mBtSettings"
-            android:layout_toEndOf="@+id/mBtSettings"
-            android:src="@drawable/logoutsymbol"
-            android:layout_gravity="right"
-            android:adjustViewBounds="true"
-            android:padding="5dp"
-            android:scaleType="fitCenter"/>
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/mBtSettings"
+                android:layout_below="@+id/mBtHealthTracker"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/settingsicon"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_toStartOf="@+id/mBtDaysSinceQuitting"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="left" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/mBtLogout"
+                android:layout_alignBottom="@+id/mBtSettings"
+                android:layout_toEndOf="@+id/mBtSettings"
+                android:src="@drawable/logoutsymbol"
+                android:layout_gravity="right"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </ScrollView>

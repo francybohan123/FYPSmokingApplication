@@ -32,7 +32,7 @@ public class Validation {
         }
     }
 
-/*    public static boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
 
         String validatePassword = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{6,15}$";
         Matcher dobMatcher = Pattern.compile(validatePassword).matcher(password);
@@ -45,7 +45,7 @@ public class Validation {
 
             return true;
         }
-    }*/
+    }
 
 
     public static boolean validateDateOfBirth(String dateOfBirth) {

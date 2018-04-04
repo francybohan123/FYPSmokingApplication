@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.learn2crack.R;
@@ -38,6 +40,7 @@ public class daysSinceQuittingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Days Since Quitting");
+        Toast.makeText(daysSinceQuittingPage.this, "Take it day by day!", Toast.LENGTH_LONG).show();
         setContentView(R.layout.activity_days_since_quitting_page);
         mSubscriptions = new CompositeSubscription();
         initViews();

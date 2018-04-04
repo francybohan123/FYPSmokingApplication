@@ -23,11 +23,8 @@ import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
 import com.learn2crack.model.Response;
 import com.learn2crack.network.NetworkUtil;
-import com.learn2crack.socialmediaapp.mainMenuPage;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import retrofit2.adapter.rxjava.HttpException;
 import rx.android.schedulers.AndroidSchedulers;

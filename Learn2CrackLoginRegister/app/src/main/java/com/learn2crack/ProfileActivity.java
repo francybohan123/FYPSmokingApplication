@@ -129,7 +129,9 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private void handleResponse(User user) {
 
         mProgressbar.setVisibility(View.GONE);
-        mTvName.setText(user.getName());
+        String str = user.getName();
+        String cap = str.substring(0, 1).toUpperCase() + str.substring(1);
+        mTvName.setText(cap);
         mTvEmail.setText(user.getEmail());
         mTvDateOfBirth.setText(user.getDateOfBirth());
         mTvDateOfQuittingSmoking.setText(user.getDateOfQuittingSmoking());

@@ -35,6 +35,7 @@ import static com.learn2crack.utils.Validation.validateEmptyDateOfQuittingSmokin
 import static com.learn2crack.utils.Validation.validateFields;
 import static com.learn2crack.utils.Validation.validateNumberPerPacket;
 import static com.learn2crack.utils.Validation.validateNumberSmokedPerDay;
+import static com.learn2crack.utils.Validation.validatePassword;
 import static com.learn2crack.utils.Validation.validatePricePerPacket;
 
 public class RegisterFragment extends Fragment {
@@ -129,6 +130,12 @@ public class RegisterFragment extends Fragment {
 
             err++;
             mTiPassword.setError("Password should not be empty!");
+        }
+
+        if(!validatePassword(password)){
+
+            err++;
+            mTiPassword.setError("Password must be 6-15 characters long and contain at least: 1 Uppercase, 1 Lowercase, 1 Numeral, 1 - !@#$%^&*");
         }
 
         if(!validateDateOfBirth(dateOfBirth)){

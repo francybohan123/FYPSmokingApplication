@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.learn2crack.R;
 
@@ -18,6 +19,7 @@ public class healthTrackerPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Health Tracker");
+        Toast.makeText(healthTrackerPage.this, "Take a look at how your health may improve!", Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_health_tracker_page);
         listview = (ListView)findViewById(R.id.listview);
         String[] values = new String[]{"20 minutes","2 hours","12 hours", "24 hours", "48 hours", "72 hours", "2-3 weeks", "1-9 months", "1 year", "5 years", "10 years", "15 years"};

@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.learn2crack.R;
+import com.learn2crack.healthTrackerSection.healthTrackerPage;
 
 import static com.learn2crack.R.id.activity_tips_and_motivations;
 
@@ -20,6 +22,7 @@ public class tipsAndMotivationsPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Tips And Motivations");
+        Toast.makeText(tipsAndMotivationsPage.this, "Some tips to get you through the day!", Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_tips_and_motivations);
         background = (LinearLayout) findViewById(R.id.activity_tips_and_motivations);
         mTvTipsAndMots = (TextView) findViewById(R.id.mTvTipsAndMots);
