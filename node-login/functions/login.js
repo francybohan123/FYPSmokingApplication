@@ -39,5 +39,3 @@ exports.loginUser = (email, password) =>
 		.catch(err => reject({ status: 500, message: 'Internal Server Error!' }));
 
 	});
-
-	

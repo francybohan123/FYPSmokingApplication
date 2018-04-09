@@ -2,7 +2,6 @@ package com.learn2crack.network;
 
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
-
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;

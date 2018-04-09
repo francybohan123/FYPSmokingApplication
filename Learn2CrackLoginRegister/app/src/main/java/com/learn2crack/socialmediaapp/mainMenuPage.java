@@ -4,26 +4,22 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
+import com.learn2crack.fragments.settingsPage;
 import com.learn2crack.healthTrackerSection.healthTrackerPage;
 import com.learn2crack.tipsAndMotivationsSection.tipsAndMotivationsPage;
 import com.learn2crack.utils.Constants;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-
 import rx.subscriptions.CompositeSubscription;
 
 public class mainMenuPage extends AppCompatActivity {
 
     public static final String TAG = ProfileActivity.class.getSimpleName();
+    public static final String KT = settingsPage.class.getSimpleName();
 
-    TextView textMediumLogIn, textLargeLogoLQB;
-    Typeface value;
     private ImageButton profileButton;
     private ImageButton moneySavedButton;
     private ImageButton cigarettesPassedButton;
@@ -44,11 +40,6 @@ public class mainMenuPage extends AppCompatActivity {
         setTitle("Main Menu");
         setContentView(R.layout.activity_main_menu_page);
         mSubscriptions = new CompositeSubscription();
-/*        textMediumLogIn = (TextView) findViewById(R.id.textMediumLogIn);
-        textLargeLogoLQB = (TextView) findViewById(R.id.textLargeLogoLQB);
-        value = Typeface.createFromAsset(getAssets(),"MTCORSVA.ttf");
-        textMediumLogIn.setTypeface(value);
-        textLargeLogoLQB.setTypeface(value);*/
         initSharedPreferences();
         initViews();
     }
@@ -141,5 +132,3 @@ public class mainMenuPage extends AppCompatActivity {
         mSubscriptions.unsubscribe();
     }
 }
-
-

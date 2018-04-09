@@ -6,11 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.learn2crack.R;
-import com.learn2crack.healthTrackerSection.healthTrackerPage;
-
-import static com.learn2crack.R.id.activity_tips_and_motivations;
 
 public class tipsAndMotivationsPage extends AppCompatActivity {
 
@@ -59,5 +55,4 @@ public class tipsAndMotivationsPage extends AppCompatActivity {
 
         next();
     }
-
 }

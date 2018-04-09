@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements ResetPasswordDial
         }
     }
 
+    //Singleton Design Pattern
     private void loadFragment(){
 
         if (mLoginFragment == null) {
@@ -57,6 +58,5 @@ public class MainActivity extends AppCompatActivity implements ResetPasswordDial
     private void showSnackBarMessage(String message) {
 
         Snackbar.make(findViewById(R.id.activity_main),message,Snackbar.LENGTH_SHORT).show();
-
     }
 }

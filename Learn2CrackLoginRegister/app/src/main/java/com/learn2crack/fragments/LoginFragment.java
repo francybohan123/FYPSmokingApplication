@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.learn2crack.ProfileActivity;
@@ -25,12 +24,10 @@ import com.learn2crack.model.Response;
 import com.learn2crack.network.NetworkUtil;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
-
 import retrofit2.adapter.rxjava.HttpException;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
-
 import static com.learn2crack.utils.Validation.validateEmail;
 import static com.learn2crack.utils.Validation.validateFields;
 
@@ -79,6 +76,7 @@ public class LoginFragment extends Fragment {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
     }
 
+    //Validation
     private void login() {
 
         setError();
@@ -133,13 +131,10 @@ public class LoginFragment extends Fragment {
         editor.putString(Constants.TOKEN,response.getToken());
         editor.putString(Constants.EMAIL,response.getMessage());
         editor.apply();
-
         mEtEmail.setText(null);
         mEtPassword.setText(null);
-
         Intent intent = new Intent(getActivity(), ProfileActivity.class);
         startActivity(intent);
-
     }
 
     private void handleError(Throwable error) {
@@ -151,7 +146,6 @@ public class LoginFragment extends Fragment {
             Gson gson = new GsonBuilder().create();
 
             try {
-
                 String errorBody = ((HttpException) error).response().errorBody().string();
                 Response response = gson.fromJson(errorBody,Response.class);
                 showSnackBarMessage(response.getMessage());

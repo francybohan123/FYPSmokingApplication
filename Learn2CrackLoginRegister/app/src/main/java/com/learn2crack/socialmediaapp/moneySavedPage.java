@@ -9,11 +9,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.learn2crack.R;
-import com.learn2crack.healthTrackerSection.healthTrackerPage;
 import com.learn2crack.model.Response;
 import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
@@ -23,8 +21,6 @@ import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -71,7 +67,6 @@ public class moneySavedPage extends AppCompatActivity {
 
         mSubscriptions.add(NetworkUtil.getRetrofit(mToken).getProfile(mEmail)
                 .observeOn(AndroidSchedulers.mainThread())
-                //.unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse, this::handleError));
     }
@@ -143,7 +138,6 @@ public class moneySavedPage extends AppCompatActivity {
     private void showSnackBarMessage(String message) {
 
         Snackbar.make(findViewById(R.id.activity_money_saved_page),message,Snackbar.LENGTH_SHORT).show();
-
     }
 
     @Override

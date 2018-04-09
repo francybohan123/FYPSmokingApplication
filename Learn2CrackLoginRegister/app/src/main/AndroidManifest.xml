@@ -46,7 +46,6 @@
         <activity android:name=".socialmediaapp.cigarettesPassedPage" />
         <activity android:name=".socialmediaapp.welcomeClass" />
         <activity android:name=".chat.chatRoom" />
-        <activity android:name=".socialmediaapp.settingsPage" />
         <activity android:name=".tipsAndMotivationsSection.tipsAndMotivationsPage" />
         <activity android:name=".healthTrackerSection.healthTrackerPage" />
         <activity android:name=".healthTrackerSection.twentyMinutes" />
@@ -60,7 +59,7 @@
         <activity android:name=".healthTrackerSection.oneYear" />
         <activity android:name=".healthTrackerSection.fiveYears" />
         <activity android:name=".healthTrackerSection.tenYears" />
-        <activity android:name=".healthTrackerSection.fifteenYears"></activity>
+        <activity android:name=".healthTrackerSection.fifteenYears" />
     </application>
 
 </manifest>

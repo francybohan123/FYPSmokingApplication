@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.learn2crack.MainActivity;
 import com.learn2crack.R;
 
@@ -37,9 +36,9 @@ public class welcomePage extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
 }
-

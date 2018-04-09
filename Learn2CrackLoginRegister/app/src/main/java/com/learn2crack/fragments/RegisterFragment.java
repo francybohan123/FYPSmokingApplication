@@ -26,7 +26,6 @@ import retrofit2.adapter.rxjava.HttpException;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
-
 import static com.learn2crack.utils.Validation.validateDateOfBirth;
 import static com.learn2crack.utils.Validation.validateDateOfQuittingSmoking;
 import static com.learn2crack.utils.Validation.validateEmail;
@@ -102,7 +101,6 @@ public class RegisterFragment extends Fragment {
     private void register() {
 
         setError();
-
         String name = mEtName.getText().toString();
         String email = mEtEmail.getText().toString();
         String password = mEtPassword.getText().toString();
@@ -111,7 +109,6 @@ public class RegisterFragment extends Fragment {
         String numberSmokedPerDay = mEtNumberSmokedPerDay.getText().toString();
         String pricePerPacket = mEtPricePerPacket.getText().toString();
         String numberPerPacket = mEtNumberPerPacket.getText().toString();
-
         int err = 0;
 
         if (!validateFields(name)) {
@@ -242,8 +239,6 @@ public class RegisterFragment extends Fragment {
             try {
 
                 String errorBody = ((HttpException) error).response().errorBody().string();
-                /*Response response = gson.fromJson(errorBody,Response.class);
-                showSnackBarMessage(response.getMessage());*/
 
             } catch (IOException e) {
                 e.printStackTrace();

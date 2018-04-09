@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.learn2crack.R;
@@ -65,7 +64,6 @@ public class cigarettesPassedPage extends AppCompatActivity {
 
         mSubscriptions.add(NetworkUtil.getRetrofit(mToken).getProfile(mEmail)
                 .observeOn(AndroidSchedulers.mainThread())
-                //.unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse, this::handleError));
     }

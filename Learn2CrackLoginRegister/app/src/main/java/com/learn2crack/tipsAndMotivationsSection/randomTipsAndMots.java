@@ -10,12 +10,12 @@ public class randomTipsAndMots {
                                 "Think of a positive effect quitting has had on you and tell close supportive friends about it.",
                                 "Make a list of every situation you used to smoke in (food, alcohol, etc). Then write small replacement activities next to each item and read them as often as you can.",
                                 "Ask yourself several times a day if you are currently grinding your teeth and order them to relax.",
-                                "If your heavy feels heavy, drop everything, go outside for a 10-minute walk and get back to your day.",
+                                "If your head feels heavy, drop everything, go outside for a 10-minute walk and get back to your day.",
                                 "Read a lot of articles on benefits of quitting smoking. This will pass time as well as recharge your will power.",
                                 "Watch some funny videos on YouTube. It makes a huge difference to get in a few laughs during each day.",
                                 "Practice 5 minutes of meditation in the morning to relief yourself from the extra stress and anxiety that might come the first 1-2 weeks of quitting.",
                                 "Create an online blog and use any chance you get to fill it with examples of how cigarettes have affected your personal life negatively.",
-                                "Always keep a pack of gum, tic tac’s, etc in your pocket and keep your mouth busy.",
+                                "Always keep a pack of chewing gum in your pocket and keep your mouth busy.",
                                 "Drink lots of tea. A warm stomach gives a very satisfying feeling.",
                                 "If your withdrawal symptoms are too harsh, think about creating a slow qutting plan instead.",
                                 "Try to drink at least 8 glasses of water per day.",
@@ -42,5 +42,4 @@ public class randomTipsAndMots {
         }
         return randTipsAndMots[number];
     }
-
 }

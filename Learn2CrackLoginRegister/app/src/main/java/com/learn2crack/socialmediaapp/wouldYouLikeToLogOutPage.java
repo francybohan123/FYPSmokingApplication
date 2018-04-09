@@ -2,19 +2,13 @@ package com.learn2crack.socialmediaapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
-import com.learn2crack.healthTrackerSection.healthTrackerPage;
 import com.learn2crack.utils.Constants;
 import rx.subscriptions.CompositeSubscription;
 
@@ -26,7 +20,6 @@ public class wouldYouLikeToLogOutPage extends AppCompatActivity {
     private Button logoutButton;
     private Button noDontLogoutButton;
     private CompositeSubscription mSubscriptions;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

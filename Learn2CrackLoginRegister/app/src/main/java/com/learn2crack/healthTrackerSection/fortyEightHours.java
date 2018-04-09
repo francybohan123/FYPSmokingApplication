@@ -2,7 +2,6 @@ package com.learn2crack.healthTrackerSection;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.learn2crack.R;
 
 public class fortyEightHours extends AppCompatActivity {

@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.learn2crack.R;
 
 public class healthTrackerPage extends AppCompatActivity {
@@ -24,7 +23,7 @@ public class healthTrackerPage extends AppCompatActivity {
         listview = (ListView)findViewById(R.id.listview);
         String[] values = new String[]{"20 minutes","2 hours","12 hours", "24 hours", "48 hours", "72 hours", "2-3 weeks", "1-9 months", "1 year", "5 years", "10 years", "15 years"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        android.R.layout.simple_list_item_1, android.R.id.text1, values);
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 

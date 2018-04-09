@@ -17,17 +17,8 @@ import com.learn2crack.fragments.ChangePasswordDialog;
 import com.learn2crack.model.User;
 import com.learn2crack.network.NetworkUtil;
 import com.learn2crack.socialmediaapp.mainMenuPage;
-import com.learn2crack.socialmediaapp.welcomePage;
-import com.learn2crack.socialmediaapp.wouldYouLikeToLogOutPage;
 import com.learn2crack.utils.Constants;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-
 import retrofit2.adapter.rxjava.HttpException;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -48,7 +39,6 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private Button mBtMainMenu;
     private Button mBtchatRoom;
     private Button mBtChangePassword;
-    //private Button mBtLogout;
     private ProgressBar mProgressbar;
     private SharedPreferences mSharedPreferences;
     private String mToken;
@@ -73,18 +63,13 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvDate = (TextView) findViewById(R.id.tv_date);
         mTvDateOfBirth = (TextView) findViewById(R.id.tv_dateofbirth);
         mTvDateOfQuittingSmoking = (TextView) findViewById(R.id.tv_dateofquittingsmoking);
-        //mTvNumberSmokedPerDay = (TextView) findViewById(R.id.tv_numbersmokedperday);
-        //mTvPricePerPacket = (TextView) findViewById(R.id.tv_priceperpacket);
-        //mTvNumberPerPacket = (TextView) findViewById(R.id.tv_numberperpacket);
         mBtMainMenu = (Button) findViewById(R.id.mBtMainMenu);
         mBtchatRoom = (Button) findViewById(R.id.mBtchatRoom);
         mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
-        //mBtLogout = (Button) findViewById(R.id.btn_logout);
         mProgressbar = (ProgressBar) findViewById(R.id.progress);
         mBtMainMenu.setOnClickListener(view -> mainMenu());
         mBtchatRoom.setOnClickListener(view -> chatRoom());
         mBtChangePassword.setOnClickListener(view -> showDialog());
-        //mBtLogout.setOnClickListener(view -> logout());
     }
 
     private void initSharedPreferences() {
@@ -104,7 +89,6 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         startActivity(logInIntent);
     }
 
-
     private void showDialog(){
 
         ChangePasswordDialog fragment = new ChangePasswordDialog();
@@ -121,7 +105,6 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
 
         mSubscriptions.add(NetworkUtil.getRetrofit(mToken).getProfile(mEmail)
                 .observeOn(AndroidSchedulers.mainThread())
-                //.unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse,this::handleError));
     }
@@ -149,8 +132,6 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
             try {
 
                 String errorBody = ((HttpException) error).response().errorBody().string();
-                //Response response = gson.fromJson(errorBody,Response.class);
-                //showSnackBarMessage(response.getMessage());
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -181,4 +162,3 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mSubscriptions.unsubscribe();
     }
 }
-

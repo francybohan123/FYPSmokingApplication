@@ -6,13 +6,9 @@ import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.learn2crack.MainActivity;
 import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
 import com.learn2crack.utils.Constants;
@@ -41,7 +37,6 @@ public class welcomeClass extends AppCompatActivity {
         initSharedPreferences();
         initViews();
     }
-
 
     private void initViews() {
 
@@ -83,5 +78,3 @@ public class welcomeClass extends AppCompatActivity {
         mSubscriptions.unsubscribe();
     }
 }
-
-

@@ -45,13 +45,9 @@ public class ResetPasswordDialog extends DialogFragment {
     private TextInputLayout mTiToken;
     private TextInputLayout mTiPassword;
     private ProgressBar mProgressBar;
-
     private CompositeSubscription mSubscriptions;
-
     private String mEmail;
-
     private boolean isInit = true;
-
     private Listener mListner;
 
     @Nullable

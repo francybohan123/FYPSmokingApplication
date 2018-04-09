@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class chatRoom extends AppCompatActivity implements RoomListener {
 
-    private String channelID = "wBou7IcxMg71COgB";
+    private String channelID = "wBou7IcxMg71COgB"; //connection to Scaledrone channel
     private String roomName = "observable-room";
     private EditText editText;
     private Scaledrone scaledrone;
@@ -28,6 +28,7 @@ public class chatRoom extends AppCompatActivity implements RoomListener {
     private ListView messagesView;
 
     @Override
+    //Set up connection and layout of the chat room
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Chat Room");
@@ -102,6 +103,7 @@ public class chatRoom extends AppCompatActivity implements RoomListener {
         }
     }
 
+    //Join two random words in each array to create a handle for the user in the chat
     private String getRandomName() {
         String[] adjs = {"autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"};
         String[] nouns = {"waterfall", "river", "breeze", "moon", "rain", "wind", "sea", "morning", "snow", "lake", "sunset", "pine", "shadow", "leaf", "dawn", "glitter", "forest", "hill", "cloud", "meadow", "sun", "glade", "bird", "brook", "butterfly", "bush", "dew", "dust", "field", "fire", "flower", "firefly", "feather", "grass", "haze", "mountain", "night", "pond", "darkness", "snowflake", "silence", "sound", "sky", "shape", "surf", "thunder", "violet", "water", "wildflower", "wave", "water", "resonance", "sun", "wood", "dream", "cherry", "tree", "fog", "frost", "voice", "paper", "frog", "smoke", "star"};
@@ -112,6 +114,7 @@ public class chatRoom extends AppCompatActivity implements RoomListener {
         );
     }
 
+    //give user's circle a random color when shown on other user's screen
     private String getRandomColor() {
         Random r = new Random();
         StringBuffer sb = new StringBuffer("#");

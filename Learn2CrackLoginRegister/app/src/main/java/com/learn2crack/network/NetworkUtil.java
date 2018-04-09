@@ -1,9 +1,7 @@
 package com.learn2crack.network;
 
 import android.util.Base64;
-
 import com.learn2crack.utils.Constants;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import retrofit2.Retrofit;
@@ -22,7 +20,6 @@ public class NetworkUtil {
                 .addCallAdapterFactory(rxAdapter)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(RetrofitInterface.class);
-
     }
 
     public static RetrofitInterface getRetrofit(String email, String password) {
@@ -54,7 +51,6 @@ public class NetworkUtil {
     public static RetrofitInterface getRetrofit(String token) {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-
         httpClient.addInterceptor(chain -> {
 
             Request original = chain.request();
